@@ -1,0 +1,128 @@
+<!--talbe1.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body>
+    <!-- tr - table row의 줄임말, 줄을 표현하는 태그 -->
+    <!-- td - table data의 줄임말, 칸을 표현하는 태그, 텍스트나 이미지 등을 넣을 수 있다 -->
+    <!-- border - 테이블의 테두리 선 굵기 설정. 단위는 px. 테이블 테그에만 테두리선이 적용된 것이 아니라 td에도 적용되어 두겹처럼 보임(border=1일 경우)-->
+
+   <table border="1">
+        <tr>
+            <td width="200" height="100" align="center" colspan="2">1</td>
+            <!-- <td width="50">2</td> -->
+            <td width="80" rowspan="2">3</td>
+        </tr>    
+        <tr height="100">
+            <td>4</td>
+            <td>5</td>
+            <!-- <td>6</td> -->
+        </tr>    
+    </table><br><hr><br>
+
+    <table border="1" cellspacing="1">                  <!-- 첫 번째 tr -->
+        <tr height="80" align="center" valign="top" style="background-color : red">
+            <td colspan="4">a</td>
+            <!-- <td width="150"></td>
+            <td width="150"></td>
+            <td width="150"></td> -->
+            <td width="150" style="background-color:blue" valign="bottom">b</td>
+        </tr>
+        <tr height="80" align="center" valign="bottom"> <!-- 두 번째 tr -->
+            <td width="150" style="background-color:yellow">c</td>
+            <td colspan="4">d</td>
+            <!-- <td></td>
+            <td></td>
+            <td></td> -->
+        </tr>
+        <tr height="80" align="center">                 <!-- 세 번째 tr -->
+            <td>m</td>
+            <td colspan="3" style="background-color:pink" align="left">e</td>
+            <!-- <td></td>
+            <td></td> -->
+            <td rowspan="4" valign="bottom" style="background-color:powderblue">f</td>
+        </tr>
+        <tr height="80" align="center">                 <!-- 네 번째 tr -->
+            <td rowspan="3" valign="top" style="background-color:orange">g</td>
+            <td>n</td>
+            <td colspan="2" style="background-color:green">h</td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+        </tr>
+        <tr height="80" align="center">                 <!-- 다섯 번째 tr -->
+            <!-- <td></td> -->
+            <td colspan="3" style="background-color:brown">i</td>
+            <!-- <td></td>
+            <td></td> -->
+            <!-- <td></td> -->
+        </tr>
+        <tr height="80" align="center">                 <!-- 여섯 번째 tr -->
+            <!-- <td></td> -->
+            <td width="150" valign="bottom" align="left" style="background-color:bisque">j</td>
+            <td width="150" style="background-color:aqua" valign="top">k</td>
+            <td width="150" valign="top" align="right">l</td>
+            <!-- <td></td> -->
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <br>
+
+    <table border="1">
+        <thead>
+            <tr height="50">
+                <th></th>
+                <th width="100">번호</th>
+                <th width="100">점수</th>
+                <th width="100">이름</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr height="50">
+                <td>tjguds</td>
+                <th>1</th>
+                <td>87</td>
+                <td>김유신</td>
+            </tr>
+            <tr height="50">
+                <td></td>
+                <td>1</td>
+                <th>87</th>
+                <td>김유신</td>
+            </tr>
+            <tr height="50">
+                <td></td>
+                <td>1</td>
+                <td>87</td>
+                <th>김유신</th>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+ 
+    <!-- #은 id를 의미 -->
+    <!-- div#box -->
+    <!-- <div id="box"></div> -->
+
+    <!-- 
+        약어로 태그 생성하는 방법
+        태그명>하위태그명>하위태그명
+
+        ex)
+        table>tr>td          -> 1줄 1칸 테이블 생성
+        table>tr>td*4        -> 1줄 4칸
+        table>tr*10>td*2     -> 10줄 2칸 테이블
+        
+        p#para -> p태그를 생성하면서 p태그에 id="para" 부여 -> <p id="para"></p>
+        # - 아이디, . - 클래스
+        div.box -> <div class="box"</div>
+     -->
+
+</body>
+</html>
