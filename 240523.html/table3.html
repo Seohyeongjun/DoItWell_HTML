@@ -1,0 +1,111 @@
+<!--table3.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table3</title>
+ 
+    <style type="text/css">     /* css 에서는 주석처리 형식이 다름 */
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap');
+ 
+        /* th{
+            font-size:40px; 
+        }
+
+        #title_school{          /*  #은 id를 의미함 *//*
+            font-size:20px;
+        }
+
+        .title{                 /*  .은 class를 의미함 *//*
+            font-size:10px;
+        } */
+
+        /* td{
+            border-width:1px;
+            border-color:black;
+            border-style:solid;
+        }
+        th{
+            border:black 1px solid;
+        } */
+        table{
+            border-collapse:collapse;
+            width:380px;
+        }
+        td, th{
+            border:black solid 1px;
+            text-align:center;
+        }
+        .width_100{
+            width:100px;        
+        }
+        .width_80{
+            width:80px;
+        }
+        tr{
+            height:40px;
+        }
+        .bg_yellow{
+            background-color:yellow;    /* background-color : 배경색, background : 배경색, 이미지 가능*/
+        }
+        .bg_light_green{
+            background:lightgreen;
+        }
+        td:hover{                           /* 마우스가 올라가는 곳이 바뀜*/
+            background:hwb(184 19% 7%);   /* 음역 변경*/             
+            font-size:20px;                 /* 폰트 사이즈 변경*/
+            /*font-weight:800;                /* 폰트 굵기*/
+            /*font-family:'고딕';             /* 메모장에 나오는 글꼴만 적용 됨, 다른 컴퓨터에는 없을 수 있으므로 일반적인 글꼴 사용(웹용폰트 또는 구글폰트)*/  
+            /*color:red;                    글씨 색 변경, font-color은 없음*/
+
+            font-family: "Nanum Gothic", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    </style>
+</head>
+<body>
+    <table >
+        <thead>
+            <tr>
+                <th id="title_school" class="width_100 bg_yellow">학교명</th>   <!-- id의 이름은 전 영역에서 중복 사용 안됨 ex)title_school -->     
+                <th class="width_100 bg_yellow">학과명</th>                     <!-- class는 중복 사용 됨 -->
+                <th class="width_100 bg_light_green">이름</th>                  <!-- th : 열 또는 줄에 제목으로 사용, 가운데 정렬 -->
+                <th class="width_80 bg_light_green">성적</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A대학교</td> 
+                <td>컴공과</td>
+                <td>이순신</td>
+                <td>4.3</td>
+            </tr>
+            <tr>
+                <td>B대학교</td>
+                <td class="bg_light_green"
+                >국문과</td>
+                <td>한석봉</td>
+                <td>3.9</td>
+            </tr>
+            <tr>
+                <td>C대학교</td>
+                <td>기계과</td>
+                <td>장영실</td>
+                <td class="bg_light_green">2.5</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th class="bg_yellow">학교명</th>
+                <th class="bg_yellow">학과명</th>
+                <th class="bg_light_green">이름</th>
+                <th class="bg_light_green">성적</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
