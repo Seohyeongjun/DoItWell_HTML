@@ -1,0 +1,115 @@
+<!--table4.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div_style4.html</title>
+    <style type="text/css">
+        #blue_box{
+            /* box-sizing:border-box; */
+            border:2px solid black;
+            background:blue;
+            padding:30px 20px 10px 20px;    /* box-sizing:border-box를 사용하면 padding이 안쪽으로 잡히게 된다.*/
+            width:400px;
+            margin:0 auto;          /* 좌우 가운데 정렬*/
+        }
+        #box1{
+            /* border:2px solid red; */
+            width:100%;
+            }
+
+        .card{
+            display:inline-block;
+            width:32%;
+            height:200px;
+        }
+
+        #box1>.card:nth-child(1){   /*#box1>.card:first-child{}와 같다*/
+            background-color:orange;
+        }
+        #box1>.card:nth-child(2){
+            background-color:green;
+            margin-left:0.5%;
+            margin-right:0.5%;
+            /* margin-left:20px; */
+        }
+        #box1>.card:nth-child(3){   /*#box1>.card:last-child{}와 같다*/
+            background-color:gray;
+        }
+/*        #orange, #green, #gray{
+            display:inline-block;   /*좌우에 이어서 만들기 위한 명령어, 이 명령어를 사용하지 않으면 블록화 되어 한 라인에 하나씩만 실행된다(div실행 시). *//*
+        }
+        #orange{
+            background:orange;
+            width:100px;
+            height:200px;
+        }
+        #green{
+            background:green;
+            width:100px;
+            height:200px;
+            margin-left:20px;
+        }
+        #gray{
+            background:gray;
+            width:100px;
+            height:200px;
+            margin-left:20px;
+        }*/
+        #orange_box{
+            box-sizing:border-box;      /*사이즈 고정할때 사용, padding을 주면 주어진 사이즈의 안쪽에 padding공간이 생김. 이 명령을 사용하지 않으면 주어진 사이즈 + padding공간이 됨*/
+            width:calc(98.5% + 8px);
+            background:orange;
+            margin-top:10px;
+            padding:10px 20px;
+        }
+        
+        .board{
+            display:inline-block;
+            width:80px; height:30px;
+        }
+        #orange_box>.board:nth-child(1){
+            background:red;
+        }
+        #orange_box>.board:last-child{
+            margin-left:20px;
+            background:blue;
+        }
+        /* #red, #blue{
+            display:inline-block;       /*블록지정이 아닌 형태로 좌우에 이어서 만들 수 있다(div설정 시)*//*
+        }
+        #red{  
+            background:red;
+            height:30px;
+            width:80px;
+        }
+        #blue{
+            background:blue;
+            height:30px;
+            width:80px;
+            margin-left:10px;
+        } */
+    </style>
+</head>
+<body>
+    <div id="blue_box">
+        <div id="box1">
+            <span class="card"></span>
+            <span class="card"></span>
+            <span class="card"></span>
+            <!-- <span id="orange"></span>
+            <span id="green"></span>
+            <span id="gray"></span> -->
+        </div>
+        <div id="orange_box">
+            <span class="board"></span>
+            <span class="board"></span>
+            <!-- <div id="red"></div>
+            <div id="blue"></div> -->
+            <!-- <span id="red"></span>
+            <span id="blue"></span> -->
+        </div>
+    </div>
+</body>
+</html>

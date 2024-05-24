@@ -10,6 +10,7 @@
             border:black 2px solid;
             width:800px;
             box-sizing:border-box;
+            margin:0 auto;  /* margin을 0 auto로 설정하면 위아래는 0으로 조절하지 않고 좌우는 auto로 가운데 자동 정렬이 된다*/
         }
         #yellow{
             background:yellow;
@@ -25,23 +26,24 @@
         #pink{
             background:pink;
             margin-top:10px;
-            height:280px;
-            padding:10px 30px 10px 30px;
+            /* height:280px;    padding으로 공간을 만들어 줌으로 높이 설정 안해도 됨 */
+            padding:10px 30px; /* 10px 30px 10px 30px와 같음*/
             box-sizing:border-box;
+            text-align:center;
         }
 
         #blue{
             background:blue;
-            height:70px;
-            text-align:center;
-            padding: 40px 0;
+            /* height:70px; */
+            /* text-align:center; */
+            padding: 40px 0;     /* padding을 주어서 글씨(콘텐츠1)의 위치를 조정할 수 있다(위아래), 여기서는 padding으로 위아래 40px씩 주고 좌우는 0으로 변경 없음*/
         }
         #light_yellow{
             background:yellow;
-            height:40px;
-            margin-top:10px;
-            text-align:center;
-            padding:30px 0;
+            /* height:40px; */
+            margin-top:10px; 
+            /* text-align:center; */
+            padding:30px 0;     /* padding을 주어서 글씨(콘텐츠2)의 위치를 조정할 수 있다(위아래), 여기서는 padding으로 위아래 30px씩 주고 좌우는 0으로 변경 없음*/
         }
 
         #gray{
