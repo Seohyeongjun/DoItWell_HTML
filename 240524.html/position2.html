@@ -4,9 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sosition2.html</title>
+    <title>position2.html</title>
+    
+    <style type="text/css">
+        *{
+            margin:0; padding:0; box-sizing:border-box;
+        }
+
+        ul{
+            list-style-type:none;   /* ul태그 모양 사용 안함 */
+        }
+
+        #wrap{
+            /* border: 2px solid red; */
+            width:1000px;
+            margin:0 auto;
+            padding:20px 0;
+            border-bottom:2px solid gray;
+            position:relative;
+        }
+
+        .box{
+            width:100px;
+            padding:10px 0;
+        }
+
+        #box1{
+            /* position:absolute; */
+            position:relative;
+            left:50px;
+            
+        }
+        #box2{
+            position:absolute;
+            /* position:relative; */
+            right:50px;
+            color:red;
+            top:20px;
+        }
+
+        #box3{
+            position:relative;
+            /* top:50px; */
+           color:blue;
+           left:50px;
+        }
+
+        #nav{
+            width:1000px; 
+            margin:0 auto;
+            position:sticky;
+            top:20px;       /* (sticky사용 후)스크롤을 내릴때 top에서 20px에 고정. 스크롤이 올라가 있거나 올라갈 때 원래 위치가 나타나면 표시 됨*/
+
+        }
+
+        #content{
+            height:3000px;
+        }
+
+        #sub{
+            position:fixed;
+            top:150px;
+            left:30px;
+        }
+        #box3>b:hover ~ #sub{   /* 마우스를 <B>태그, 배달의 민족에 올리면 ~ sub가 변화한다. ~는 형제, 동급 의미 함, hover로 상위 태그를 바꾸진 못한다. */
+            position:absolute;
+            top:0;
+            left:100px;
+            width:100px;
+            background-color:yellow;
+            z-index:3;      /* 1 이상 숫자가 높을 수록 앞으로 나온다 */
+        }
+
+    </style>
 </head>
 <body>
     
+    <div id="wrap">
+        <div id="box1" class="box">로그인</div>
+        <div id="box2" class="box">사이트맵</div>
+        <div id="box3" class="box">
+            <b>배달의민족</b>
+            <div id="sub">
+                <ul id="list">
+                    <li>햄버거</li>
+                    <li>치킨</li>
+                    <li>피자</li>
+                    <li>라면</li>
+                    <li>국밥</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="nav">
+        <b>HOME</b>
+        <b>한식</b>
+        <b>일식</b>
+        <b>중식</b>
+        <b>찜/탕</b>
+        <b>고기</b>
+    </div>
+
+    <div id="content"></div>
+
+ 
 </body>
 </html>
