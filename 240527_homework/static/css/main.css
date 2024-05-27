@@ -1,0 +1,98 @@
+/*main.css*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+ul{
+    list-style-type:none;
+}
+
+#wrap{
+    width:1000px;
+    margin:0 auto;
+    position:relative;
+    /* border:2px solid red; */
+    /* height:500px; */
+}
+
+#top{
+    width:100%;
+    margin-bottom:20px;
+    position:relative;
+    font-size:20px;
+}
+
+#top_image{
+    background:url(../image/earth1.jpeg) no-repeat center;
+    background-size:cover;
+    height:400px;
+}
+
+#top_image_select{
+    display:inline-block;
+    padding:20px;
+    left:10px;
+    width:50%;
+}
+.sel{
+    position:absolute;
+    width:50px;
+    height:20px;
+    border-radius:10px;
+}
+.sel1{
+    background-color:green;
+}
+.sel2{
+    background-color:lightgreen;
+    left:80px;
+}
+.sel3{
+    background-color:lightgreen;
+    left:140px;
+}
+#box{
+    background-color:rgb(77, 79, 204);
+    color:whitesmoke;
+    height:140px;
+    width:80px;
+    position:fixed;
+    top:150px;
+    left:30px;
+    line-height:35px;
+    border-radius:10px;
+    padding-left:8px;
+
+}
+#text_box{
+    /* border:2px solid red; */
+    margin-top:20px;
+    padding:20px;
+}
+
+.bottom{
+    display:inline-block;
+    margin:10px;
+    position:absolute;
+    left:20px;
+    border:2px solid green;
+    border-radius:10px;
+    height:200px;
+    width:300px;
+}
+.first_image{
+    position:relative;
+    background:url(../image/fresh.jpg) no-repeat center;
+}
+
+.second_image{
+    position:relative;
+    background:url(../image/fresh2.jpg) no-repeat center;
+}
+
+.third_image{
+    position:relative;
+    background:url(../image/fresh3.jpg) no-repeat center;
+}
