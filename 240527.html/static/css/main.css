@@ -1,0 +1,157 @@
+/* main.css */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+ul{
+    list-style-type:none;       /* list type의 모양 삭제 */
+}
+
+#wrap{
+    width:1200px;
+    margin:0 auto;
+    position:relative;
+}
+
+#header{
+    width:100%;
+    margin-bottom:20px; /* #main태그와의 간격*/
+    position:relative;
+}
+
+#top{
+    background-color:#3b414d;
+    color:#eee; /*글씨 색*/
+    width:100%
+}
+
+.top_text_box{
+    text-align:right;
+    padding-right:50px;
+}
+
+#top .top_text{ /* top 다음에 공간 필수 */
+    display:inline-block;       /* 한 라인에 표시 */
+    padding:8px 15px;           /* 글씨 간격 */
+}
+
+#top .top_text:nth-child(2){    /* top 다음에 공간 필수 */
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+}
+
+/*
+    float은 뜨다의 뜻을 가지고 있고 html에서도 상위 태그 위 떠 있는 
+    형태로 표시 되기 때문에 상위태그에 포함되지 않는다.
+    정렬을 위한 속성이지만 상위태그에 미포함되기 때문에 
+    상위태그에 높이, 여백 같은 값을 별도로 지정해 줘서 상요해야 한다.
+*/
+
+#nav{
+    width:100%;
+    position:relative;    
+    height:106px;   /* float을 사용하면 상위태그(#nav)에 영향을 주지 않으므로 높이를 따로 설정해 줘어야 한다. */
+}
+
+#logo_box{          /* top_text_box 와 간격 */
+    padding:8px 0;
+    float:left;     /* float 정렬을 뜻 함, 왼쪽 정렬*/
+}                   /* float을 사용하면 padding을 줘도 상위태그에 영향을 미치지 못한다 */
+
+#logo_box img{      /* logo_box 다음에 빈칸을 두면 logo_box밑의 모든 img, >를 쓰면 바로 하위의 img */
+    width:90px;     /* 그림의 크기를 줄일 때*/
+}
+
+#menu_box{
+    /* float:right;    */
+    position:relative;  /* float 사용 안할 시 menu_list에 position:absolute, right:0으로 둔다*/
+}
+#menu_list{
+    /* padding:40px 0;
+    height:106px; */
+    position:absolute;
+    right:0;
+}
+#menu_list .menu{   /* menu_list 다음에 공간 필수 */
+    /* padding:8px 0;  float를 사용하면 상위태그로부터 독립되므로 상위태그가 영향을 받지 않는다 */
+    float:left;     /*상위태크 기준, 센터소개가 제일 윗 태그이므로 센터 소개를 기준으로 정렬*/
+    position:relative;
+    top:40px;
+    /* left:100px; */
+    padding:0 15px;
+}
+
+#menu_list .menu:hover{
+    cursor: pointer;    /*cursor의 모양 설정*/
+    color:brown;
+    font-weight:800;
+    text-shadow: 3px 3px 2px blue; /* 그림자효과 x, y, z축 및 색상. x, y의 양수는 오른쪽 아래쪽. z의 양수는 글씨 뒷쪽 */
+}
+
+#main{
+    width:100%;
+}
+
+#slide{
+    width:100%;
+    position:relative;
+}
+
+#slide .slide_image{
+ /*   background:url(../image/slide.jpeg);     /* ../ 상위 폴도로 이동*/
+ /*   background-repeat:no-repeat;        /* 반복패턴 설정 */
+ /*   background-size:cover;      /* 이미지사이즈를 너비에 맞춘다(늘려줌)  */
+ /*   background-position:center; /* 이미지의 보여지는 위치를 가운데 부분으로 */
+
+    background:url(../image/slide.jpeg) no-repeat center;   /* 위 내용과 같음 */
+    background-size:cover;
+    height:350px;           /* 높이를 줘야 배경 이미지가 보인다 */
+}
+
+#slide .left{
+    background-color:white;
+    border:2px solid black;
+    font-size:25px;
+    position:absolute;
+    left:5px;
+    top:50%;
+    padding:10px 5px;
+    transform:translateY(-50%);     /*위치를 정확히 가운데 둔다*/
+    opacity:0.7;   /* 0:완전 투명, 1:원래 상태, 0~1사이를 둔다*/
+    cursor:pointer; /* 커서의 모양 */
+}
+
+#slide .right_arrow{
+    background-color:white;
+    border:2px solid black;
+    font-size:25px;
+    position:absolute;
+    right:5px;
+    top:50%;
+    padding:10px 5px;
+    transform:translateY(-50%);     /*위치를 정확히 가운데 둔다*/
+    opacity:0.7;   /* 0:완전 투명, 1:원래 상태, 0~1사이를 둔다*/
+    cursor:pointer; /* 커서의 모양 */
+}
+
+/*  위와 같다.
+.move_bt{
+    background-color:white;
+    top:50%;
+    font-size:25px;
+    padding:10px 5px;
+    position:absolute;
+    transform:translateY(-50%);     /*위치를 정확히 가운데 둔다
+    opacity:0.7;   /* 0:완전 투명, 1:원래 상태, 0~1사이를 둔다
+}
+*/
+.left{
+    left:5px;
+}
+
+.right{
+    right:5px;
+}
+*/

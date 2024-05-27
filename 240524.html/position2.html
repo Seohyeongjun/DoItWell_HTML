@@ -18,7 +18,7 @@
         #wrap{
             /* border: 2px solid red; */
             width:1000px;
-            margin:0 auto;
+            margin:0 auto;          /* wrap가 위아래 0, 좌우는 가운데 정렬 */
             padding:20px 0;
             border-bottom:2px solid gray;
             position:relative;
@@ -67,7 +67,7 @@
             top:150px;
             left:30px;
         }
-        #box3>b:hover ~ #sub{   /* 마우스를 <B>태그, 배달의 민족에 올리면 ~ sub가 변화한다. ~는 형제, 동급 의미 함, hover로 상위 태그를 바꾸진 못한다. */
+        #box3>b:hover ~ #sub{   /* 마우스를 <B>태그, '배달의 민족'에 올리면 ~ sub가 변화한다. ~는 형제, 동급 의미 함, hover로 상위 태그를 바꾸진 못한다. */
             position:absolute;
             top:0;
             left:100px;
