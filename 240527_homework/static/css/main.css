@@ -96,6 +96,7 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
     width:100%;
 }
 .bottom{
+  
     display:inline-block;   /* 한줄로 나란히 놓기 위해서는 position, float, display:inline-block으로 한다. */
     margin:10px;
     /* position:absolute; */
