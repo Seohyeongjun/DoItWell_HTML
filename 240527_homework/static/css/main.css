@@ -5,92 +5,125 @@
     box-sizing:border-box;
 }
 
-ul{
+ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
     list-style-type:none;
 }
 
 #wrap{
     width:1000px;
-    margin:0 auto;
+    margin:0 auto;  /* 0은 상하여백, auto는 좌우여백을 자동으로(똑같이) */
     position:relative;
     /* border:2px solid red; */
     /* height:500px; */
 }
 
 #top{
-    width:100%;
+    /* width:100%; */
     margin:20px 0;
-    font-size:20px;
+    font-size:20px;   /* 제목은 <H>태크로 하면 좋다. <H2>정도?        */
 }
 
-#top_image{
+#top_image{   /* 더미이미지(테스트용) url(https://loremflickr.com/1000/500/tree) 1000*500사이즈의 earth 이미지 */
     background:url(../image/earth1.jpeg) no-repeat center;
     background-size:cover;
-    height:400px;
+    height:400px;       /* 원래 이미지의 크기(높이)에 맞게 해주는게 좋다 */
 }
 
 #top_image_select{
     padding:20px;
     left:10px;
-    width:50%;
+    /* width:50%; */
 }
 .sel{
-    position:absolute;
+ /*   position:absolute;      /*한줄로 나란히 놓기 위해서는 position, float, display:inline-block으로 한다.*/
+    display:inline-block;      /* position 대신 하용 함 */
     width:50px;
     height:20px;
     border-radius:10px;
+    background-color:lightgreen;    /* 한 번에 색 지정 후 원하는 것만 따로 지정하면 좋다 */
+}
+#top_image_select :first-child{ /* top_image_select 다음에 한칸 공간 필수 */
+    background-color:green;         /* 원하는 것만 따로 색 지정 */
 }
 .sel1{
-    background-color:green;
+    /* background-color:green; */
 }
 .sel2{
-    background-color:lightgreen;
-    left:80px;
+    /* background-color:lightgreen; */
+    /* left:80px; */    /* position을 주었을때 위치 지정해야 함 */
 }
 .sel3{
-    background-color:lightgreen;
-    left:140px;
+    /* background-color:lightgreen; */
+    /* left:140px; */    /* position을 주었을때 위치 지정해야 함 */
 }
 #box{
     background-color:rgb(77, 79, 204);
     color:whitesmoke;
     height:140px;
     width:80px;
-    position:fixed;
+    position:fixed;         /* 위치고정 */
     top:150px;
     left:30px;
-    line-height:35px;
+    line-height:35px;       /* line-height는 아래로 상속이 되어 줄 간격을 준다. <li>태그 안에 직접 해주는게 좋다 */
     border-radius:10px;
     padding-left:8px;
-
+}
+.menu:hover{          /* 커서가 올라갔을때 효과 주기*/
+    cursor:pointer;
+    color:skyblue;
+    font-weight:500;
+    text-shadow: 3px 3px 2px green;
 }
 #text_box{
     /* border:2px solid red; */
-    margin-top:20px;
+    /* margin-top:20px; */
     padding:20px;
+    line-height:15px;   /* line간 줄 간격 */
 }
 
+.text{
+    color:green;
+    font-size:20px;
+    text-shadow:1px 1px 1px yellow;
+}
+
+.text1{
+    color:red;
+}
+#bottom_image{
+    /* height:200px; */
+   
+    width:100%;
+}
 .bottom{
-    display:inline-block;
+    display:inline-block;   /* 한줄로 나란히 놓기 위해서는 position, float, display:inline-block으로 한다. */
     margin:10px;
-    position:absolute;
-    left:20px;
+    /* position:absolute; */
     border:2px solid green;
     border-radius:10px;
     height:200px;
-    width:300px;
+    width:30%;      /* 상위태그 bottom_image에서 width를 100%(총 너비)로 주고 여기서는 30%로 주면 각각 30%씩 할당된다*/
+}
+
+#bottom_image :first-child{
+    background:url(../image/fresh.jpg) no-repeat center;
+    /* position:absolute; */
+   
 }
 .first_image{
-    position:relative;
-    background:url(../image/fresh.jpg) no-repeat center;
+    /* background:url(../image/fresh.jpg) no-repeat center; */
 }
 
 .second_image{
-    position:relative;
     background:url(../image/fresh2.jpg) no-repeat center;
+    /* position:absolute;      display:inline-block를 사용하면 안해도 된다 */
+    /* left:35%;               display:inline-block를 사용하면 안해도 된다 */
+
 }
 
 .third_image{
-    position:relative;
     background:url(../image/fresh3.jpg) no-repeat center;
+    /* position:absolute; */
+    /* left:70%; */
+
 }
