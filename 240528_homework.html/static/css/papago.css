@@ -11,19 +11,24 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
 }
 
 #box{
-    border:2px solid red;
+    /* border:2px solid red; */
     margin:0 auto;
     width:100%;
 }
 
 #top_box{
-    border:2px solid blue;
+    border-bottom:2px solid gray;
     width:100%;
+    padding:10px;
     /* margin-top:10px; */
+}
+
+#top_box :hover{
+    cursor:pointer;
 }
 #top_left{
     padding:20px 30px;
-    border:2px solid yellow;
+    /* border:2px solid yellow; */
 
 }
 #top_left .left{
@@ -43,7 +48,6 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
 #top_right{
     position:absolute;
     right:15px;
-    border:2px solid green;
     padding:10px 10px;
 }
 
@@ -69,47 +73,145 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
 }
 
 #middle_box{
-    margin-top:70px;
-    border:2px solid black;
+    display:inline-block;
+    margin:70px 50px;
     width:100%;
     height:500px;
-    /* display:inline-block; */
-    position:absolute;
+}
+
+#middle_box_left .sensing:hover{
+    cursor:pointer;
+    color:green;
 }
 
 #middle_box_left{
     display:inline-block;
-    border:2px solid red;
-    height:300px;
+    border:2px solid gray;
+    height:400px;
     width:45%;
     margin-left:10px;
-    /* padding:20px; */
+    padding:20px;
+    border-radius:10px;
 }
+.lang_text{
+    font-size:20px;
+}
+
+.lang_img{
+    display:inline-block;
+    background:url(../image/row_bottom.jpg) no-repeat center;
+    width:30px;
+    height:10px;
+}
+
 .lang_sen{
+    display:inline-block;
+    background:url(../image/side_botttom.jpg) no-repeat center;
+    width:30px;
+    height:20px;    
+    margin-left:380px;
+}
+
+.input{
+    padding:30px 0 150px 0;
+    font-size:40px;
+    color:gray;
+}
+.limit{
+    color:gray;
+    font-size:25px;
+    width:100px;
+    position:relative;
+    left:460px;
+}
+
+.trans{
+    height:50px;
+    margin-top:20px;
+    /* border:2px solid red; */
+}
+
+.left_box_speak{
+    display:inline-block;
+    background:url(../image/sound.jpg) no-repeat center;
+    width:30px;
+    height:50px;  
+    margin-left:30px; 
+}
+
+.left_box_text{
+    display:inline-block;
+    background:url(../image/letter.jpg) no-repeat center;
+    width:30px;
     height:50px; 
+    margin-left:50px;  
+}
+.left_box_trans{
+    font-size:30px;
+    position:relative;
+    left:265px;
+    bottom:12px;
+    padding:20px;
+    background-color:green;
+    color:white;
+    border-radius:0 0 10px 0;
+    cursor:pointer;
+}
+
+#middle_box_right{
+    position:absolute;
+    border:2px solid gray;
+    height:400px;
+    width:45%;
+    margin-left:10px;
+    padding:20px;
+    border-radius:10px;
+}
+
+#middle_box_right .lang_sel:hover{
+    cursor:pointer;
+    color:green;
 }
 
 .lang_text{
     font-size:20px;
 }
-.lang_img{
-    display:inline-block;
-    background:url(../image/row_bottom.jpg) no-repeat center;
-    width:50px;
-    height:30px;
+
+.output{
+    height:280px;
 }
 
-/* #middle_box_left .left_box{
-    border:2px solid green;
-    width:50%;
-
-}
-*/
-
-#middle_box_right{
+.right_box_speak{
     display:inline-block;
-    border:2px solid blue;
-    height:300px;
-    width:45%;
-    /* margin-right:10px; */
-} 
+    background:url(../image/sound.jpg) no-repeat center;    
+    width:30px;
+    height:50px; 
+    margin-left:30px;  
+    cursor:pointer;
+}
+
+.right_box_text{
+    display:inline-block;
+    background:url(../image/letter.jpg) no-repeat center;
+    width:30px;
+    height:50px; 
+    margin-left:50px; 
+    cursor:pointer; 
+}
+
+.right_box_star{
+    display:inline-block;
+    background:url(../image/star.jpg) no-repeat center;
+    width:30px;
+    height:50px; 
+    margin-left:50px;  
+    cursor:pointer;
+}
+.right_box_share{
+    display:inline-block;
+    background:url(../image/share.jpg) no-repeat center;
+    width:30px;
+    height:50px; 
+    margin-left:50px;  
+    cursor:pointer;
+}
