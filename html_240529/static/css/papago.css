@@ -14,6 +14,7 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
     /* border:2px solid red; */
     margin:0 auto;
     width:100%;
+ /*   min-width:1330px;    /*최소너비를 고정
 }
 
 #top_box{
@@ -42,9 +43,32 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
     background-size:auto;
     position:relative;
     width:140px;
-    height:50px;
+    /* height:50px; */
     top:15px;
 }
+
+#top_left .web_trans>b{
+    border:1px solid red;
+    padding:5px;
+    font-size:20px;
+    border-radius:10px 0;
+    color:green;
+    background-color:#dddd;
+}
+
+/* line-height:50px; 이미지의 높이와 같이 주면 이미지의 세로 가운데에 글씨가 놓이게 된다. */
+
+
+#top_left .left:nth-child(3)::after{
+    /* border:2px solid green; */
+    content:"|";
+    position:relative;
+    left:16px;
+    /* right:-20px; */
+    color:gray; 
+}
+
+
 #top_right{
     position:absolute;
     right:15px;
@@ -73,9 +97,10 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
 }
 
 #middle_box{
-    display:inline-block;
+    /* display:inline-block; */
+    display:flex;   /*display:flex를 사용하면 하위태그포함 한줄로 넣는다, inline-block, float, position 불필요 */
     margin:70px 50px;
-    width:100%;
+    min-width:1330px;
     height:500px;
 }
 
@@ -85,7 +110,7 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
 }
 
 #middle_box_left{
-    display:inline-block;
+    /* display:inline-block; */
     border:2px solid gray;
     height:400px;
     width:45%;
@@ -98,14 +123,14 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
 }
 
 .lang_img{
-    display:inline-block;
+    /* display:inline-block; */
     background:url(../image/row_bottom.jpg) no-repeat center;
     width:30px;
     height:10px;
 }
 
 .lang_sen{
-    display:inline-block;
+    /* display:inline-block; */
     background:url(../image/side_botttom.jpg) no-repeat center;
     width:30px;
     height:20px;    
@@ -155,11 +180,14 @@ ul{     /* <ul>태그에 * 이 찍혀 나오지 않게 함*/
     background-color:green;
     color:white;
     border-radius:0 0 10px 0;
+    /* 상위태그에서 overflow:hidden;을 처리해 주면 상위태그의 박스외부로 나가는 부분은 감춰져서 radius처리된것 처럼 보인다. */
     cursor:pointer;
 }
 
 #middle_box_right{
-    position:absolute;
+    display:inline-block;
+    /* display:flex; */
+    /* position:absolute; */
     border:2px solid gray;
     height:400px;
     width:45%;
