@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex_2</title>
+</head>
+<body>
+    <style>
+        #cont1{
+            width:100%;
+            max-width:1200px;
+            /* min-width:600px; */
+            margin:0 auto;
+            display:flex;
+            flex-wrap:wrap;     /*display:flex;를 하면 한줄로 나오는데 flex-wrap:wrap을 하게 되면 브라우저 크기에 따라 다음 줄로 내려온다. */
+            justify-content:center;     /* flex로 지정한 영역의 가운데 정렬 */
+            /* gap:10px; */
+        }
+        #cont1>img{
+            width:20%;                  /* 반응형으로 갈때 %로 한다. px는 고정값이므로 반응형이 되지 않는다. (브라우저 크기를 줄이고 늘리고 하는 것에 따른 반응) */
+            padding-right:10px;         /* 이미지 사이 간격 */
+            box-sizing:border-box;      /*박스 사이즈를 고정, padding으로 내부로 늘어난 너비외에 내부의 이미지가 변한다. */
+            /* width: calc( (1200px - 30px) / 4 ); */
+        }
+    </style>
+    <!-- <h2> 여러줄 배치하기 </h2> -->
+    <div id="cont1">
+        <!-- <img src="https://loremflickr.com/300/400?random=1">
+        <img src="https://loremflickr.com/300/400?random=2">
+        <img src="https://loremflickr.com/300/400?random=3">
+        <img src="https://loremflickr.com/300/400?random=4">
+        <img src="https://loremflickr.com/300/400?random=5">
+        <img src="https://loremflickr.com/300/400?random=6">
+        <img src="https://loremflickr.com/300/400?random=7">
+        <img src="https://loremflickr.com/300/400?random=8">
+        <img src="https://loremflickr.com/300/400?random=2">
+        <img src="https://loremflickr.com/300/400?random=1">        -->
+    </div>
+
+    <style>
+        #card_wrap{
+            display:flex;
+            flex-wrap:wrap;     /* display:flex;를 하면 기본적으로 일렬로 배치되는데 flex-wrap:wrap을 하면 주어진 너비에 맞춰서 다음 줄로 내려 배치된다. */
+            width:400px;
+            box-sizing:border-box;  /* 너비 고정 */
+            row-gap:9px;
+        }
+        .card{
+            width:33.33%;
+            display:flex;
+            flex-direction:column;
+/*            align-items:center;     /* display:flex; 한 후 flex-direction:column을 하면 x, y축이 바뀌므로 align-items:center를 줘야 가운데 온다 */
+            box-sizing:border-box;
+        }
+
+        .card:nth-child(1), .card:nth-child(4){
+            padding-right:6px;
+        }
+        .card:nth-child(2), .card:nth-child(5){
+            padding-left:3px;
+            padding-right:3px;
+        }
+        .card:nth-child(3), .card:nth-child(6){
+            padding-left:6px;
+        }
+
+        .card .card_img{
+            width:100%;
+            border-radius:5px;
+            overflow:hidden;
+        }
+        .card .card_img img{
+            width:100%;
+            display:block;              /* overflow:hidden으로 하면 하단의 이미지는 텍스트화 되어 있어 변하지 않는다. block로 블록화 하면 적용된다. */
+         }
+       .card_text{
+            margin:0;
+            padding-top:5px;
+            -webkit-line-clamp:2;       /* 화면에 표시할 라인 수 */
+            overflow:hidden;            /* overflow - 지정된 크기보다 큰 영역 또는 텍스트, 이미지를 화면에 어떻게 표시할 것인지 설정, 영역 설정해 줘야 함(height) */
+            height:42px;
+
+            /* 주어진 영역 이상일 경우 ...으로 마무리 설정 */
+            text-overflow:ellipsis;
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+        }
+
+    </style>
+    <div id="card_wrap">
+        <div class="card"> 
+            <div class="card_img">     <!-- (div.card>div.card_img>img^p.card_text)*6 -->
+                <!-- <img src="https://loremflickr.com/100/130?random=1" alt=""> -->
+            </div>
+            <!-- <p class="card_text">html 구조의 시작 헤더</p> -->
+        </div>
+        <!-- <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130?random=2" alt=""></div>
+            <p class="card_text">본문 푸터까지 마그업, H1,H2</p>
+        </div>
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130?random=3" alt=""></div>
+            <p class="card_text">제목을 표시하고 p태그로 문장</p>
+        </div>
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130?random=4" alt=""></div>
+            <p class="card_text">링크는 A 이미지는 IMG</p>
+        </div>
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130?random=5" alt=""></div>
+            <p class="card_text">CSS 스타일 색상 폰트 레이아웃</p>
+        </div>
+        <div class="card">
+            <div class="card_img"><img src="https://loremflickr.com/100/130?random=6" alt=""></div>
+            <p class="card_text">클래스와 아이디로 선택하고 헥사코드</p>
+        </div> -->
+    </div>
+
+    <style>
+        #box{
+            display:flex;
+            flex-wrap:wrap;     /* display:flex;를 하면 기본적으로 일렬로 배치되는데 flex-wrap:wrap을 하면 주어진 너비에 맞춰서 다음 줄로 내려 배치된다. */
+            width:100%;
+            box-sizing:border-box;  /* 너비 고정 */
+            padding: 30px 20px;
+            background-color:#ccc;
+            /* row-gap:9px; */
+        }
+        .card_box{
+            width:50%;
+            display:flex;
+            flex-direction:row;
+            height:80px;
+            align-items:center;
+        }
+        .box_img{
+            padding:0 5px;
+            width:40px;
+            text-align:center;
+            /* display:block; */
+            
+            /* padding:15px 0; */
+            /* align-items:90px; */
+        }
+        .box_img .img{
+            /* display:block;
+            height:40px;
+            box-sizing:border-box; */
+        }
+        
+        .text_1{
+            font-size:20px;
+            padding-bottom:5px;
+        }
+        /* .card_box .img{
+            height:40px;
+            border:1px solid green;
+            box-sizing:border-box;
+            display:block;
+            width:40px;
+        } */
+
+    </style>
+    <div id="box">
+        <div class="card_box">
+            <div class="box_img"><img src="https://loremflickr.com/40/40?random=1" alt=""></div>
+            <div class="box_t">
+                <div class="box_text text_1">똑똑한 인사정보 관리</div>
+                <div class="box_text text_2">한 곳에서 관리하는 인사 및 개인정보</div>
+            </div>
+        </div>
+        <div class="card_box">
+            <div class="box_img"><img src="https://loremflickr.com/40/40?random=2" alt=""></div>
+            <div class="box_t">
+                <div class="box_text text_1">회사 문서 관리</div>
+                <div class="box_text text_2">회사의 다양한 문서 및 증명서 보관</div>
+            </div>
+        </div>
+        <div class="card_box">
+            <div class="box_img"><img src="" alt="">■</div>
+            <div class="box_t">
+                <div class="box_text text_1">구성원 근무·휴가 관리</div>
+                <div class="box_text text_2">우리 회사 문화에 알맞는 근무와 휴가 관리</div>
+            </div>
+        </div>
+        <div class="card_box">
+            <div class="box_img"><img src="" alt="">■</div>
+            <div class="box_t">
+                <div class="box_text text_1">할 일 요청 및 공지사항 작성</div>
+                <div class="box_text text_2">한눈에 들어오는 할 일과 회사 소식</div>
+            </div>
+        </div>
+        <div class="card_box">
+            <div class="box_img"><img src="" alt="">■</div>
+            <div class="box_t">
+                <div class="box_text text_1">워크플로우 (전자결재)</div>
+                <div class="box_text text_2">회사의 모든 의사결정과 커뮤니케이션</div>
+            </div>
+        </div>
+        <div class="card_box">
+            <div class="box_img"><img src="" alt="">■</div>
+            <div class="box_t">
+                <div class="box_text text_1">외부 서비스 연동</div>
+                <div class="box_text text_2">구글 혹은 슬랙과 제품내 주요 기능 연동을 통한 편의성 제공</div>
+            </div>
+        </div>
+        <div class="card_box">
+            <div class="box_img"><img src="" alt="">■</div>
+            <div class="box_t">
+                <div class="box_text text_1">HR 인사이트 (Analytics)</div>
+                <div class="box_text text_2">심층 분석된 회사 HR 데이터 확인</div>
+            </div>
+        </div>
+        <div class="card_box">
+            <div class="box_img"><img src="" alt="">■</div>
+            <div class="box_t">
+                <div class="box_text text_1">강력한 보안</div>
+                <div class="box_text text_2">국제표준화기구에서 제정한 정보보호 관리체계 인증</div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

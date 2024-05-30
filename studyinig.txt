@@ -11,3 +11,9 @@ http://mastery.games/flexboxzombies/
 
 css 연습
 http://flukeout.github.io
+
+
+
+
+
+이미지 불러오기 : "https://loremflickr.com/200/200?random=1"

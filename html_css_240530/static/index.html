@@ -1,0 +1,141 @@
+<!-- flex_test_1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex1</title>
+</head>
+<body>
+    <style type="text/css">
+        #container1{
+            display:flex;
+            gap:20px;   /* 아이템 사이 간격 */
+        }
+        .item1{
+            /* padding:0 10px; */
+            cursor:pointer;
+            
+        }
+        #container2{
+            display:flex;
+            width:500px;
+        }
+        .item2{
+            flex-grow:1;
+        }
+
+        #container3{
+            display:flex;
+            padding:20px 0;
+            border-top:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            width:800px;
+        }
+    
+        #container3>ul{
+            margin:0;
+            padding:0;
+            list-style-type:none;   /* <li>태그가 기본으로 갖는 *모양 등 삭제 */
+            flex-grow:1;
+            display:flex;
+            align-items:start;
+            /* justify-content:space-around; */
+        }
+
+        .logo1>img{
+            width:50px;
+            display:block;      /* 이미지의 기본적인 여백(4px)을 없애주기 위해 블록화 함 */
+        }
+        
+    </style>
+    <h2>메뉴 만들기</h2>
+    <div id="container1">
+        <div class="item1">쇼핑</div>
+        <div class="item1">증권</div>
+        <div class="item1">뉴스</div>
+        <div class="item1">웹툰</div>
+        <div class="item1">스포츠</div>
+    </div>
+    <div id="container2">
+        <span class="item2">쇼핑</span>
+        <span class="item2">증권</span>
+        <span class="item2">뉴스</span>
+        <span class="item2">웹툰</span>
+        <span class="item2">스포츠</span>
+    </div>
+    <div id="container3">   
+        <div class="logo1"><img src="https://loremflickr.com/200/200"></div>
+        <ul>
+            <li class="item3">게임</li>
+            <li class="item3">영화</li>
+            <li class="item3">웹툰</li>
+            <li class="item3">물놀이</li>
+            <li class="item3">바캉스</li>
+        </ul>
+    </div>
+    
+    <style>
+        #test{
+            display:flex;
+            /* justify-content:center; */
+            /* width:1000px; */
+            border-top:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            justify-content:space-between;
+            padding:0 20px;
+            height:50px;
+            font-weight:600;
+        }
+        #test>ul{
+            margin:0;
+            padding-left:0;
+            list-style-type:none;   /* <li>태그가 기본으로 갖는 *모양 등 삭제 */
+            display:flex;
+            align-items:center;
+            justify-content:start;
+        }
+        ul .item4{
+            /* border:1px solid red; */
+            /* height:50px; */
+            padding:15px 15px;
+        }
+        #test .create{
+            height:80%;
+            list-style-type:none; 
+            background-color:green;
+            color:white;
+            padding:0 30px;
+            border-radius:5px;
+            line-height:80%;
+            display:flex;
+            align-items:center;
+        }
+
+        ul .item4:hover{
+            cursor:pointer;
+            background-color:green;
+            color:white;
+            border-radius:5px;
+        }
+        #test .create:hover{
+            cursor:pointer;
+            background-color:#ccc;
+            color:green;
+        }
+    </style>
+
+    <h2> 메뉴 만들기 실습 </h2>
+    <div id="test">
+        <ul>
+            <li class="item4">홈</li>
+            <li class="item4">웹툰</li>
+            <li class="item4">베스트도전</li>
+            <li class="item4">도전만화</li>
+            <li class="item4">마이페이지</li>
+        </ul>
+        <span class="create">CREATOR'S</span>
+
+    </div>
+</body>
+</html>

@@ -10,18 +10,18 @@
         #wrap{
             height:500px;
             border:2px solid black;
-            display:flex;
-            justify-content:start;      /* start:시작점에서 정렬, center:중간점에서 정렬, end:주축의 끝점에서 정렬*/
-            align-items:center;         /* 교차축을 설정하였기에 높이가 기본크기로 된다.*/
 
-           flex-direction:column;       /* row 기본 배치(x축), column y축 배치(x, y축 변경) */
+            display:flex;
+            justify-content:center;      /* start:시작점에서 정렬, center:중간점에서 정렬, end:주축의 끝점에서 정렬*/
+            align-items:start;         /* 교차축을 설정하였기에 높이가 기본크기로 된다.*/
+
+            flex-direction:row;       /* row 기본 배치(x축), column y축 배치(x, y축 변경) */
  /*           flex-wrap:wrap;           /* wrap 배율에 따라 다음 줄에 이어서 적용 */
-            /* gap:20px; */
             /* column-gap:50px; */
 
 
-/*            text-align:center;          /* x축으로 text가 가운데 정렬*/
- /*           line-height:100px;          /* y축으로 text가 가운데 정렬, 높이와 같은 값 설정 */
+           text-align:center;          /* x축으로 text가 가운데 정렬 */
+           line-height:100px;          /* y축으로 text가 가운데 정렬, 높이와 같은 값 설정 */
 
             /* gap:20px;                /* item간 간격 */
 /*        }
@@ -51,14 +51,15 @@
             order:2;
 */        }
             .red{
-                align-self:end;
+                /* align-self:end; */
             }
 
         .violet{
-            flex-grow:1;    /* 단독으로 쓸 경우 나머지 공간을 다 차지한다.*/
+/*            flex-grow:1;    /* 단독으로 쓸 경우 나머지 공간을 다 차지한다.*/
         }
         .item{
-            width:30%;
+            width:100px;
+            /* width:30%; */
             height:100px;
         }
     </style>
@@ -85,7 +86,7 @@
         자식태그를 flex Item 이라고 한다.
 
     flex로 적용할 수 있는 속성(정렬, 간격 배치 등)은 컨테이너에 적용하는 속성과
-    아이템에 적용하느 ㄴ속성으로 나누어져 있다. (각각 영향을 주지 않는다.)
+    아이템에 적용하는 속성으로 나누어져 있다. (각각 영향을 주지 않는다.)
 
     컨테이너(부모태그)에 적용하는 속성
         display:flex;   부모태그에 쓰면 자식태그에 적용 됨
