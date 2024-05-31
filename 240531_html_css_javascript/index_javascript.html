@@ -99,9 +99,9 @@
         // // total=total_coffee+total_juice;
         total_price=((coffee_price*coffee_count)+(juice_count*juice_price));
         
-        document.write("<br><hr>커피 총 주문 금액 : "+(coffee_count*coffee_price));
-        document.write("<br>수박주스 총 주문 금액 : "+(juice_count*juice_price));
-        document.write("<br>음료 총 주문 금액 : "+total_price+"<hr>");
+        // document.write("<br><hr>커피 총 주문 금액 : "+(coffee_count*coffee_price));
+        // document.write("<br>수박주스 총 주문 금액 : "+(juice_count*juice_price));
+        // document.write("<br>음료 총 주문 금액 : "+total_price+"<hr>");
 
         red_cup=10;
         blue_cup=20;
@@ -113,28 +113,40 @@
 
         for(a=0; a<2; a++)
         {
-            choice=prompt("커피, 쥬스 중 하나를 고르세요. ");
-  
-            document.write("<style>")
-                    document.write('#coffee{width:250px; height:100px; border:1px solid green; padding:20px; text-align:center; background-color:aqua; color:red;}');
-                    // document.write('#coffee .coffee_price{color:green;}');
-                
-            document.write("</style>")
+            coffee_color=0;
+            juice_color=0;
+
+            choice=prompt("커피, 쥬스 중 하나를 고르세요. 커피 : 1,  쥬스 : 2 ");
+            if(a==0){
+                coffee_color=choice;
+            }
+            if(a==1){
+                juice_color=choice;
+            }
+           document.write("<style>");
+                    document.write('#coffee{width:250px; height:100p; border:1px solid green; padding:20px; text-align:center; background-color:aqua; color:red;}');                
+            document.write("</style>");
  
             document.write('<div id="coffee">');
-                    document.write('<div class="coffee_price">커피 총 주문 금액 : '+red_cup+'</div>');
-                    document.write('<div class="juice_price">수박주스 총 주문 금액 : '+blue_cup+'</div>');
+                    document.write('<div class="coffee_price">커피 총 주문 금액 : '+red_cup+coffee_color+'</div>');
+                    document.write('<div class="juice_price">수박주스 총 주문 금액 : '+blue_cup+juice_color+'</div>');
                     document.write('<div class="total">수박주스 총 주문 금액 : '+cup+'</div>');
-                document.write('</div>');
+            document.write('</div>');
 
-            if(choice==커피)
+            if(coffee_color==1)
             {
-                document.write("<style>")
-               document.write('#coffee .coffee_price{color:green;}');
-               document.write("</style>")
+                document.write("<style>");
+                // document.write('#coffee .coffee_price{color:green;}');
+                document.write("</style>");
+                choice=0;
             }
-            else
-                document.write('#coffee .coffee_price{color:green;}');
+            else if(juice_color==2)
+            {
+                document.write("<style>");
+                // document.write('#coffee .coffee_price{color:yellow;}');
+                document.write("</style>");
+                choice=0;
+            }
 
         }
         // kor=prompt("국어점수");
