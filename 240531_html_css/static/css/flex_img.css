@@ -1,0 +1,36 @@
+/* flex_img.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#gallery{
+
+    display:flex;
+    flex-direction:column;
+    height:950px;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    width:1700px;
+    margin:50px auto;
+    padding-top:10px;
+    border:1px solid gray;
+}
+
+#gallery .image img{
+    display:block;
+}
+
+#gallery .image{
+    width:400px;
+    border-radius:20px;
+    border:1px solid red;
+    overflow:hidden;
+}
+
+.small{height:200px;}
+.medium{height:300px;}
+.big{height:400px}
