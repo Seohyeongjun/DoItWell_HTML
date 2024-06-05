@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+        user=0;
+        com=0;
+        com2=0;
+
+        user=Number(prompt("랜덤값 맞추기 1~50 중 고르시오"));
+        com=Math.floor(Math.random()*50)+1;
+
+        while(user!=com) 
+        {
+            alert(`${com}`);
+
+            if(user<com)
+            {    
+                alert("다운");
+
+                com2=com;
+                // while(1)
+                {
+                    while(com2>=com)
+                    {   com=Math.floor(Math.random()*50)+1;
+                        if(com2<com)
+                            break;
+                    }
+                }
+            }
+
+            else if(user>com)
+            {
+                alert("업");
+
+                com2=com;
+                // while(1)
+                {
+                    while(com2<=com)
+                    {   com=Math.floor(Math.random()*50)+1;
+                        break;
+
+                        if(com2>com)
+                            break;
+                   }
+                }
+
+            }
+
+            else
+                document.write(`<br>${user} : 정답`);
+        }
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

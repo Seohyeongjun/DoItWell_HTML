@@ -23,18 +23,15 @@
 
         soju_jan=Number(prompt("하루에 마신 소주잔 입력 : "));
 
-        min=(20*365*24*60*soju_jan)*2;
-        hour=min/60;
-        days=hour/24;
+        min=(20*365*soju_jan)*2;
+        hour=Math.floor(min/60);
+        days=Math.floor(hour/24);
 
         document.write("이 사람은 총 "+(20*365*soju_jan)+"잔을 마셨다.<br>");
 
         document.write("이 사람의 수명은 총 "+min+"분 단축 되었다.<br>");
         document.write("이 사람의 수명은 총 "+hour+"시간 단축 되었다.<br>");
-        document.write("이 사람의 수명은 총 "+days+"일 단축 되었다.");
-
-
-
+        document.write("이 사람의 수명은 총 "+days+"일 단축 되었다.<br>");
 
 
         // 과제2.
@@ -49,9 +46,6 @@
         document.write("<br><hr>첫 번째 주사위 숫자는 : "+num_1);
         document.write("<br>첫 번째 주사위 숫자는 : "+num_2);
         document.write((num_1==num_2)? "<br>당첨" : "<br>꽝");
-
-
-
 
     </script>
 </body>

@@ -1,0 +1,171 @@
+<!-- 조건문 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+<script>
+/*
+    변수의 범위(scope)
+    let, var, const
+
+    let 변수의 데이터 변경 가능, 변수의 재생성 불가
+    let a=10;
+    a=20; 가능
+    a=13; 가능
+    let a=34; 불가능
+
+    var 변수의 데이터 변경 가능, 변수의 재생성, 메모리 공간 재할당
+    
+    const 변수의 데이터 변경 불가, 상수화
+
+    let - { } 안의 변수 생성(지역변수), 전역변수, 배열 생성시, 객체 생성시
+    var - { } 안의 변수 생성(지역변수)
+    const - 고유값, 변경되면 안되는 값, 
+*/    
+    // count=0;
+
+    // function up()
+    // {
+    //     // alert('증가!')
+    //     // count++;
+
+    //     if(count++>=20)
+    //         count=20;
+
+    //     // .getElement - html안에서 태그를 가져와라
+    //     var bbox=document.getElementById("box");     // box는 변수명, 변수 box에 box라는 id의 태크를 넣는다.
+    //     bbox.innerText=count;                    // id box의 위치에 count값을 넣는다.
+    // }  
+    // function down()
+    // {
+    //     // count--;
+
+    //     if(count--<=-10)
+    //         count=-10;
+    //     var bbox=document.getElementById("box");     // box는 변수명, 변수 box에 box라는 id의 태크를 넣는다.
+
+    //     bbox.innerText=count; 
+    // }
+
+    // menu=prompt("실행 할 메뉴를 입력하시오(복사 c, 붙여넣기 v, 잘라내기 x)");
+
+    // switch(menu){
+    //     case "c":
+    //         document.write("복사");
+    //         break;
+    //     case "v":
+    //         document.write("붙여넣기");
+    //         break;
+    //     case "x":
+    //         document.write("잘라내기");
+    //         break;
+    // }
+        // var i=0;
+        // while(i<=12 )
+        // {
+        //     document.write("게임을 시작하겠습니다.");
+        //     // 게임 진행을 위한 코딩
+        //     document.wwrite("게임이 끝났습니다.");
+        //     i++;
+
+        // }
+        // var i=0;
+        // while(i<100)
+        // {
+        //     i++;
+ 
+        //     if(i%2==0){
+        //     // document.write(`i = ${++i}<br>`);
+        //     document.write(`i = ${i}<br>`);
+        //     }
+        // }
+
+
+        // num=0;
+        // i=1;
+        // j=1;
+        // num=Number(prompt("숫자를 입력하시오(1~9) :"));
+        
+        // if(num<=9)
+        // while(num<=9)
+        // {
+        //     while(i<=9)
+        //     {
+        //         document.write(`${num} x ${i} = ${num*i}<br>`);
+        //         i++;
+        //     }
+        //     num++;
+        //     i=1;
+        //     document.write('<br>');
+        // }
+        // else
+        //     document.write('1~9를 입력하시오');
+
+  
+  
+        // 동전 앞면 뒷면 맞추기
+        // 1. 앞면, 2. 뒷면
+        // 동전 앞면 뒷면 맞추기를 10판 할 수 있게 만드세요.
+
+        // num1=0;
+        // num2=0;
+        // i=0;
+        // j=0;
+
+        // while(i<10)
+        // {
+        //     num1=Math.floor(Math.random()*2)+1;
+        //     num2=Number(prompt("동전의 앞뒷면 맞추기 : 1-앞면, 2-뒷면 "));
+
+        //     document.write(`컴퓨터 : ${num1}, 나 : ${num2} -> `);
+            
+        //     if(num1==num2)
+        //         document.write(`맞춤<br>`);
+        //     else
+        //         document.write('틀림<br>');
+            
+        //     i++;
+        // }
+
+        // 컴퓨터가 가지고 있는 숫자를 맞춰라
+        // 컴퓨터에게 1~50 중 하나를 랜덤값으로 줄 것이다.
+        // 맞출때까지 계속 입력한다.
+        // 입력값을 컴퓨터 숫자와 비교화여 업, 다운 을 화면에 표시
+
+        num1=0;
+        num2=0;
+
+        num1=Math.floor(Math.random()*50)+1;
+
+        while(num1!=num2) 
+        {
+            num2=Number(prompt("랜덤값 맞추기 1~50 중 고르시오"));
+
+            document.write(`선택 : ${num2}<br>`);
+            
+            if(num1<num2)
+                alert("다운");
+
+            else if(num1>num2)
+                alert("업");
+
+            else
+                document.write(`<br>${num1} : 정답`);
+        }
+
+
+
+</script>
+
+</head>
+<body>
+    <!-- onclick은 마우스로 html태그를 클릭할 때의 동작을 처리하기 위한 이벤트 
+        태그를 클릭하면 onclick="함수명()"의 함수명이라는 이름을 자바스크립트에서 찾아서 실행.
+        클릭하면 어떤 기능 또는 동작을 하고 싶은지 자바스크립트로 작성
+    -->
+
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    /*    
+    1. 세개의 정수를 입력 받아서 가장 큰 수를 출력
+         단, 같은 숫자 입력은 하지 말것
+
+    */
+
+    // num1=0;
+    // num2=0;
+    // num3=0;
+
+    // num1=Number(prompt("첫 번째 숫자를 입력 :"));
+    // num2=Number(prompt("두 번째 숫자를 입력 :"));
+    // num3=Number(prompt("세 번째 숫자를 입력 :"));
+      
+    // document.write("첫 번째 숫자 : "+num1+"<br>");
+    // document.write("두 번째 숫자 : "+num2+"<br>");
+    // document.write("세 번째 숫자 : "+num3+"<br><hr>");
+
+    // if(num1!=num2 && num2!=num3 && num1!=num3)
+    // {    
+    //     document.write("가장 큰 숫자 : ");
+
+    //     if(num1>num2 && num1>num3)
+    //         document.write(num1);
+    //     else if(num1>num2 && num1<num3)
+    //         document.write(num3);
+    //     else if(num1<num2 && num2<num3)
+    //         document.write(num3);
+    //     else if(num1<num2 && num2>num3)
+    //         document.write(num2);
+    // }
+    // else
+    //     document.write("중복숫자 입력, 다시 입력하세요!")
+
+    /*  
+      2. 주사위 게임 컴퓨터와 함께
+    - 컴퓨터와 내가 각각 주사위 2개씩 던진다.
+    - 주사위의 합이 큰쪽이 이긴다.
+    단, 주사위가 같은 값이면 이긴다.
+    예) 컴 : 1, 5    나 : 2, 3 -> 나의 패비(합이 작음)
+        컴 : 5, 6   나 : 1, 1 -> 나의 승리(같은 값이 나왔으므로)
+    */
+
+    dice_com1=0;
+    dice_com2=0;
+    dice_com_total=0;
+
+    dice_user1=0;
+    dice_user2=0;
+    dice_user_total=0;
+
+    dice_com1=Math.floor(Math.random()*6+1);
+    dice_com2=Math.floor(Math.random()*6+1);
+    dice_com_total=dice_com1+dice_com2;
+
+    dice_user1=Math.floor(Math.random()*6+1);
+    dice_user2=Math.floor(Math.random()*6+1);
+    dice_user_total=dice_user1+dice_user2;
+
+    document.write(`<br><hr><br><br>컴퓨터와 주사위 게임<br><br><br>` );
+    document.write(`컴퓨터 : <br>${dice_com1}, ${dice_com2} 합계 : ${dice_com_total}<br><br>`);
+    document.write(`  나 : <br>${dice_user1}, ${dice_user2} 합계 : ${dice_user_total}<br><hr>`);
+
+    if(dice_com_total>=dice_user_total)
+    {
+        if((dice_user1==dice_user2)&&(dice_com1!=dice_com2))  
+            document.write("나의 승리");
+        else if((dice_com_total>dice_user_total)||(dice_com1==dice_com2))
+            document.write("컴퓨터 승리");
+        else
+            document.write("무승부");
+    }
+    else
+    {
+        if((dice_com1==dice_com2)&&(dice_user1!=dice_user2))
+            document.write("컴퓨터 승리");
+        else
+            document.write("나의 승리");
+    }
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+
+
+</body>
+</html>
