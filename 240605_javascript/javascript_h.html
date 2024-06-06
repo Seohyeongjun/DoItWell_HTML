@@ -8,11 +8,11 @@
     <script>
 
 
-        user=0;
-        com=0;
+        user=0;     // user가 선택한 숫자
+        com=0;      // 컴퓨터가 고른 숫자
 
-        com_min=(1-1);
-        com_max=(50+1);
+        com_min=(1-1);  // 최소 숫자
+        com_max=(50+1); // 최고 숫자
 
         user=Number(prompt("랜덤값 맞추기 1~50 중 고르시오"));
         com=Math.floor(Math.random()*50)+1;
@@ -30,7 +30,7 @@
                 {   
                     com=Math.floor(Math.random()*50)+1;
  
-                    if(com>=com_max)
+                    if(com>=com_max)        // 가장 최근 선택한 높은 숫자보다 크거나 같은 숫자가 나올 경우 최근 숫자를 다시 대입
                         com=com_min;
                 }
 
@@ -48,7 +48,8 @@
                 while(com>=com_max)
                 {   
                     com=Math.floor(Math.random()*50)+1;
-                    if(com<=com_min)
+
+                    if(com<=com_min)    // 가장 최근 선택한 낮은 숫자보다 작거나 같은 숫자가 나올 경우 최근 숫자를 다시 대입
                         com=com_max;
                 }
 
