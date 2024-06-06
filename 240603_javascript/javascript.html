@@ -1,0 +1,165 @@
+<!-- javascript -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+
+    <script>
+        // javascript 출력
+        //
+        // 1. document.write(출력할 내용);
+        // document -> HTML 문서
+        // write -> HTML문서에서 body 태그에 쓰기
+        //       -> HTML문서에서 body 엘리먼트(body객체) - 자바스크립트에서의 태그 표현
+        // 
+
+        // javascript 입력
+        //
+        // 1. prompt();
+        // prompt -> 현재페이지에 내부 창을 만들어서 화면에 표시하는 방법
+        // prompt 입력한 값은 문자열
+        // 문자열이므로 숫자로 사용하려면 parseInt(), parseFloat(), Number() 같은 문자열 -> 숫자 변환 함수 사용
+
+        // refuel_car=Number(prompt("주유 휘발유량 :"));
+        // gasoline_cost=1636;
+        // gas_price=refuel_car*gasoline_cost;
+
+        // document.write("상품명 : 휘발유<br>");
+        // document.write("판매량 : "+refuel_car+"리터<br>");
+        // document.write("단가 : "+gasoline_cost+"원<br>");
+        // document.write("지불금액 : "+gas_price+"원<br>");
+
+        // 문제1.
+        // 삼각형의 넓이를 구하시오 (밑변 * 높이 /2)
+        // 밑변과 높이를 prompt를 통해 입력받으세요.
+
+        // width:0; heigh:0;
+        // width=Number(prompt("삼각형의 너비 : "));
+        // height=Number(prompt("삼각형의 높이 : "));  
+
+        // document.write("삼각형의 너비는 : "+width+"이고<br>");
+        // document.write("삼각형의 높이는 : "+height+"이므로<br>");
+        // document.write("삼각형의 넓이는 : "+parseInt(width*height/2)+"입니다.<br>");
+        
+        // Math.floor(숫자) -> 정수만 추출
+        // Math.round(숫자) -> 소수점 이하를 반올림
+
+        //소수점 몇자리까지 표현하는지 방법
+        // num.toFixed(소수점 자리수) ->num변수의 소수점 자리수까지 표현, 숫자열이 아닌 문자열이 된다.
+        // parseFloat(변수명.toFixed(소수점)); 실수로 변환
+
+        // a=10;
+        // b=20;
+        // c=0;
+        
+        // if(a!=b)
+        //     console.log(a);
+
+        // for(a=0;a<10;a++)
+        // {
+        //     console.log(2*a);
+        // }
+        // c=a!=b;
+        
+        // console.log(c);
+        
+        // tall=Number(prompt("당신의 키는 : "));
+        // console.log("true면 탑승가능, false면 탑승불가");
+        // console.log(tall);
+
+        // 초봉 3100
+        // 당신의 현재 연봉이 평균이상인가
+        // 연봉입력하여 출력
+        // document.write로 출력
+        // true명 평균이상, false명 평균이하
+
+        // 초봉평균=3100;
+        
+        // money=Number(prompt("당신의 현재 연봉은 : "));
+        // document.write("<br>당신의 평균 연봉은 "+money+"입니다.<br><hr>");
+        // document.write((money<=초봉평균)? "평균이하입니다.":"평균이상입니다.");
+
+        // 아메리카노 금액 2000원
+        // 인원 5명
+        // 내 계좌에 잔액이 얼마 인지 입력받기(prompt)
+        // 5명의 아메리카로를 구매 할 수 있는가? 없는가?
+        // document.write로 출력
+
+        // ame_price=2000;
+        // person=5;
+
+        // a=0;
+        // b=0;
+
+        // total_money=Number(prompt("내 계좌의 잔액은?"));
+        // document.write("당신의 계좌 잔액은 "+total_money+"원 입니다.<br>");
+
+        // document.write("아메리카로를 ");
+
+        // document.write((total_money/ame_price>=5)? "사 줄 수 있습니다.":"사 줄 수 없습니다.");
+
+        // 변수.trim() 변수의 문자열 공백 제거(양쪽 끝 공백)
+        //     .trimStart()   문자열의 앞쪽 공백 제거
+        //     .
+        // trimEnd()     문자열의 뒤쪽 공백 제거    
+        // 변수.toLowerCase() 소문자로 변환.
+        //     .toUpperCase() 대문자로 변환.
+        
+        
+        // 하루에 총 걸음수가 6000보를 넘으면 포인트점수 10점을 받을 수 있다.
+        // user_point=425;
+        // step=Number(prompt("오늘 총 몇 걸음 :"));
+        // add_point=(step>=6000)? Math.floor(step/6000)*10:0;
+
+        // document.write("현재 포인트는 : "+(user_point+add_point)+"점 입니다.");
+
+        // 두 정수를 입력받아 두 정수 중 큰 수 출력
+        // num1=0;
+        // num2=0;
+        // num3=0;
+
+        // num1=Number(prompt("정수 입력(1) :"));
+        // num2=Number(prompt("정수 입력(2) :"));
+        // num3=(num1>num2)? num1:num2;
+
+        // document.write("정수 입력(1) : "+num1);
+        // document.write("<br>정수 입력(2) : "+num2);
+        // document.write("<br><hr>두 정수(1), (2) 중 큰 수는 : "+num3);
+
+        // 두 정수를 입력받아 합이 21이면 블랙잭, 아니면 합을 출력    
+        // num1=0; num2=0;
+        // num3=0;
+        // num1=Number(prompt("정수 (1)입력 : "));
+        // num2=Number(prompt("정수 (2)입력 : "));
+        // num3=num1+num2;
+        
+        // document.write("정수 (1) : "+num1+"<br>정수 (2) : "+num2);
+        // document.write((num3==21)? "<br><br>블랙잭":"<br><hr>"+num3);
+
+        
+        // Math.random() 랜덤숫자 : 0.00000000000... ~ 0.9999999999...
+        // Math.floor() 정수출력
+
+        // 랜덤 함수를 사용, 1~50 중의 숫자 두개를 받으세요.
+        // 숫자 두 개의 곱하기 값이 1200 이상이면 '큰수', 아니라면 '작은수' 라고 출력
+        random_num_1=0;
+        random_num_2=0;
+        num=0;
+
+        random_num_1=Math.floor(Math.random()*50)+1;
+        random_num_2=Math.floor(Math.random()*50)+1;
+        num=random_num_1*random_num_2;
+
+        document.write("랜덤 1 :"+random_num_1);
+        document.write("<br>랜덤 2 :"+random_num_2);
+        document.write((num>=1200)?"<br>큰수":"<br>작은수");
+
+
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

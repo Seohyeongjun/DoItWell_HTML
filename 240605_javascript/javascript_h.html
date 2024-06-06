@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+        user=0;
+        com=0;
+
+        com_min=(1-1);
+        com_max=(50+1);
+
+        user=Number(prompt("랜덤값 맞추기 1~50 중 고르시오"));
+        com=Math.floor(Math.random()*50)+1;
+
+        while(user!=com) 
+        {
+            if(user>com)
+            {
+                alert(`${com} - 업`);
+                document.write(`<br>컴퓨터 ${com} : 업 `);
+
+                com_min=com;
+
+                while(com<=com_min)
+                {   
+                    com=Math.floor(Math.random()*50)+1;
+ 
+                    if(com>=com_max)
+                        com=com_min;
+                }
+
+                if(user==com)
+                    document.write(`<br>컴퓨터 : ${com} 게임 끝!`);
+            }
+
+            else if(user<com)
+            {    
+                alert(`${com} - 다운`);
+                document.write(`<br>컴퓨터 ${com} : 다운 `);
+
+                com_max=com;
+
+                while(com>=com_max)
+                {   
+                    com=Math.floor(Math.random()*50)+1;
+                    if(com<=com_min)
+                        com=com_max;
+                }
+
+                if(user==com)
+                    document.write(`<br>컴퓨터 : ${com} 게임 끝!`);
+            }
+
+            if(com==user)
+                document.write(`<br><hr>정답 : user : ${user}`);
+ 
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

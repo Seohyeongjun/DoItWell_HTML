@@ -1,0 +1,156 @@
+<!-- javascript 비교문, 반복문 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        // 두 정수를 입력받아서 두 정수 중 작은 수 출력
+
+        // num1=0;
+        // num2=0;
+
+        // num1=Number(prompt("정수 (1)입력 :"));
+        // num2=Number(prompt("정수 (2)입력 :"));
+
+        // document.write("<br>정수 (1) :"+num1)
+        // document.write("<br>정수 (2) :"+num2)
+
+        // if(num1<num2)
+        // {
+        //     document.write("<br>작은 수는 :")
+        //     document.write("정수(1) :"+num1);
+        // }
+
+        // else if(num1==num2)
+        // {
+        //     document.write("<br>정수(1)과 정수(2)는 같다")
+        // }
+
+        // else
+        // {
+        //     document.write("<br>작은 수는 :")
+        //     document.write("정수(2) :"+num2);
+        // }
+
+        // coin=Math.floor(Math.random()*2+1);
+        // user=Number(prompt("동전의 앞면 뒷면 선택 하시오. 1:앞면, 2:뒷면"));
+
+        // if(coin==1)
+        //     document.write("코인은 앞면(1)<br>");
+        // else
+        //     document.write("코인은 뒷면(2)<br>");
+
+        // document.write("당신의 선택은"+user+"<br>");
+
+        // if(user==coin)
+        //     document.write('당첨');
+        // else
+        //     document.write("실패");
+
+        // 문제.
+        // 가위바위보 컴퓨터랑 대결하기
+        // 가위 - 1, 바위 - 2, 보 - 3
+        // 컴퓨터는 랜덤값(1~3중 하나), 나는 직접 입력(prompt)
+        // 내 기준으로 승, 패, 비김
+
+        // game_com=0;
+        // game_user=0;
+        // game_com=Math.floor(Math.random()*3+1);
+        // game_user=Number(prompt("컴퓨터와 가위바위보 게임. 당신의 선택은? 가위 : 1, 바위 : 2, 보 : 3"));
+
+        // document.write("컴퓨터 : "+((game_com==1)?"가위":((game_com==2)?"바위":"보")));
+
+        // if(game_user==1)
+        // {
+        //     document.write("나 : 가위");
+        //     if(game_com==1)
+        //     {
+        //         document.write("<br>컴퓨터 : 가위");
+        //         document.write("<br>비김");
+        //     }
+        //     else if(game_com==2)
+        //     {
+        //         document.write("<br>컴퓨터 : 바위");
+        //         document.write("<br>내가 짐");
+        //     }
+        //     else
+        //     {
+        //         document.write("<br>컴퓨터 : 보");
+        //         document.write("<br>내가 이김");
+        //     }
+        // }
+        // else if(game_user==2)
+        // {
+        //     document.write("나 : 바위");
+        //     if(game_com==1)
+        //     {
+        //         document.write("<br>컴퓨터 : 가위");
+        //         document.write("<br>내가 이김");
+        //     }
+        //     else if(game_com==2)
+        //     {
+        //         document.write("<br>컴퓨터 : 바위");
+        //         document.write("<br>비김");
+        //     }
+        //     else
+        //     {
+        //         document.write("<br>컴퓨터 : 보");
+        //         document.write("<br>내가 짐");
+        //     }
+        // }
+        // else if(game_user==3)
+        // {
+        //     document.write("나 : 보");
+        //     if(game_com==1)
+        //     {
+        //         document.write("<br>컴퓨터 : 가위");
+        //         document.write("<br>내가 짐");
+        //     }
+        //     else if(game_com==2)
+        //     {
+        //         document.write("<br>컴퓨터 : 바위");
+        //         document.write("<br>내가 이김");
+        //     }
+        //     else
+        //     {
+        //         document.write("<br>컴퓨터 : 보");
+        //         document.write("<br>비김");
+        //     }        
+        // }
+        // else
+        //     document.write("입력이 잘못 되었습니다. 1~3 중 하나를 고르시오");
+    
+        // function start()
+        // {
+        //     // alert(" 클릭!!!!");  // pop-up 알림 이벤트
+        //     // document.write("입력이 잘못 되었습니다.");
+
+        //     document.getElementById('output_pos').innerText="출력할 글씨";  //innerHTML 은 HTML의 형태. 태그를 추가할 수 있다. innerText는 텍스트로 태그를 추가할 수 없다. 태그도 텍스트로 나옴.
+        // }
+
+        /*
+1. 세개의 정수를 입력 받아서 가장 큰 수를 출력
+    단, 같은 숫자 입력은 하지 말것
+
+2. 주사위 게임 컴퓨터와 함께
+    - 컴퓨터와 내가 각각 주사위 2개씩 던진다.
+    - 주사위의 합이 큰쪽이 이긴다.
+    단, 주사위가 같은 값이면 이긴다.
+    예) 컴 : 1, 5    나 : 2, 3 -> 나의 패비(합이 작음)
+        컴 : 5, 6   나 : 1, 1 -> 나의 승리(같은 값이 나왔으므로)
+
+*/
+    </script>
+</head>
+<body>
+    <style>
+
+    </style>
+
+    <button onclick="start()">나를 클릭해줘</button>
+    <h2 id="output_pos"></h2>
+
+</body>
+</html>  
