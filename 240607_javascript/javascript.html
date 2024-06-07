@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        /*
+        
+        */
+
+        // var num=0;
+        // var i=0;
+
+        // var num=Number(prompt("숫자를 입력하세요"));
+        // document.write("내가 입력한 숫자 : "+num+"<br>");
+
+        // for(var i=1;i<=num;i++)
+        //     document.write(" "+i);
+        // i=5;
+
+        // do{
+        //     document.write(" "+i);
+        //     i++;
+        // } while(i<=num);
+
+        // for( ;(i<=num*2);i++)
+        // {
+        //     document.write(" "+i);
+        // }
+
+        /*
+        문제 1
+        1~100까지 숫자 출력
+        3의배수에 해당하는 숫자 대신에 '3배'라고 출력
+        8의                          '8배'
+        3과 8의 공동의배수            '3, 8배'
+        */
+
+        var i=1;
+
+        do{
+            if((i%3==0)&&(i%8==0))
+                document.write(" 3, 8배 ");
+
+            else if(i%3==0)
+                document.write(" 3배 ");
+
+            else if(i%8==0)
+                document.write(" 8배 ");
+            else
+                document.write(i+' ');
+
+            i++;
+
+        } while(i<=100);
+
+        /*
+        문제 2
+        네개 숫자로 이루어진 비밀번호 찾기
+        각각의 숫자는 1~9 중 하나
+            네개의 숫자는 서로 중복이 없다
+            첫번째 숫자는 네번째 숫자보다 2 더 크다
+            두번째 숫자는 세번째 숫자보다 작다
+            네개의 비밀번호 숫자와 비밀번호 숫자 역순의 합은 16,456이다
+                예) 비밀번호가 1234이면 1234+4321
+        */
+        /***********************************************
+         * 
+         * 반복문을 사용하여 비밀번호 맞추기 !
+         * 
+         ***********************************************/
+        var num1=1;
+        var num2=1;
+        var num3=1;
+        var num4=1;
+        var a=0;
+        var b=0;
+        var c=0;
+        var d=0;
+
+        do{
+            for(num2=1; num2<=9; num2++,b++)
+                for(num3=1; num3<=9; num3++,c++)
+                    for(num4=1; num4<=9; num4++,d++)
+                        if((num1!=num2)&&(num1!=num3)&&(num1!=num4)&&(num2!=num3)&&(num2!=num4)&&(num3!=num4))
+                            if(num1==(num4+2))
+                                if(num2<num3)
+                                    if((num1*1000)+(num2*100)+(num3*10)+(num4)+(num4*1000)+(num3*100)+(num2*10)+(num1)==16456)
+                                        document.write('<br><hr><br>반복문 시도 비밀번호 : '+a+' '+b+' '+c+' '+d+'<br>num1 = '+num1+'<br>num2 = '+num2+'<br>num3 = '+num3+'<br>num4 = '+num4)
+            num1++;
+            a++;
+        } while(num1<=9);
+
+
+        /********************************************
+        *
+        *    랜덤으로 숫자를 받아서 비밀번호를 맞추기 !
+        *    
+        *********************************************/
+        var num5=0;
+        var num6=0;
+        var num7=0;
+        var num8=0;
+        var i=0;            // 맞추기까지 시도 횟수
+
+        for(;;)
+        {
+            num5=Math.floor(Math.random()*9)+1;
+            num6=Math.floor(Math.random()*9)+1;
+            num7=Math.floor(Math.random()*9)+1;
+            num8=Math.floor(Math.random()*9)+1;
+            i++;
+
+            if((num5!=num6)&&(num5!=num7)&&(num5!=num8)&&(num6!=num7)&&(num6!=num8)&&(num7!=num8))
+                if(num5==(num8+2))
+                    if(num6<num7)
+                        if((num5*1000)+(num6*100)+(num7*10)+(num8)+(num8*1000)+(num7*100)+(num6*10)+(num5)==16456)
+                        {
+                            document.write('<br><hr><br>랜덤 시도 횟수 : '+i+' <br>num1 = '+num5+'<br>num2 = '+num6+'<br>num3 = '+num7+'<br>num4 = '+num8)
+                            break;
+                        }
+        }
+
+    </script>
+</head>
+<body>
+    
+
+
+</body>
+</html>
