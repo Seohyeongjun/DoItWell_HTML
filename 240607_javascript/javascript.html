@@ -67,31 +67,27 @@
             네개의 비밀번호 숫자와 비밀번호 숫자 역순의 합은 16,456이다
                 예) 비밀번호가 1234이면 1234+4321
         */
-        /***********************************************
+        /*********************************************
          * 
          * 반복문을 사용하여 비밀번호 맞추기 !
          * 
-         ***********************************************/
+         *********************************************/
         var num1=1;
         var num2=1;
         var num3=1;
         var num4=1;
-        var a=0;
-        var b=0;
-        var c=0;
-        var d=0;
-
+ 
         do{
-            for(num2=1; num2<=9; num2++,b++)
-                for(num3=1; num3<=9; num3++,c++)
-                    for(num4=1; num4<=9; num4++,d++)
+            for(num2=1; num2<=9; num2++)
+                for(num3=1; num3<=9; num3++)
+                    for(num4=1; num4<=9; num4++)
                         if((num1!=num2)&&(num1!=num3)&&(num1!=num4)&&(num2!=num3)&&(num2!=num4)&&(num3!=num4))
                             if(num1==(num4+2))
                                 if(num2<num3)
                                     if((num1*1000)+(num2*100)+(num3*10)+(num4)+(num4*1000)+(num3*100)+(num2*10)+(num1)==16456)
-                                        document.write('<br><hr><br>반복문 시도 비밀번호 : '+a+' '+b+' '+c+' '+d+'<br>num1 = '+num1+'<br>num2 = '+num2+'<br>num3 = '+num3+'<br>num4 = '+num4)
+                                        document.write('<br><hr><br>비밀번호 : <br>num1 = '+num1+'<br>num2 = '+num2+'<br>num3 = '+num3+'<br>num4 = '+num4)
             num1++;
-            a++;
+            
         } while(num1<=9);
 
 
@@ -104,6 +100,7 @@
         var num6=0;
         var num7=0;
         var num8=0;
+        var num9=0;
         var i=0;            // 맞추기까지 시도 횟수
 
         for(;;)

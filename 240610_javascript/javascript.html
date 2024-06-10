@@ -1,0 +1,147 @@
+<!-- javascript 함수 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function, 함수</title>
+
+    <script>
+
+        // function - 자바스크립트에서 함수 정의는 function으로 시작한다.
+        // 함수 정의란 -  특정 기능(작업)을 실행하기 위한 코드블록
+        // 코드블록이란 {}이다.
+
+        // var a=Number(prompt("a :"));
+        // var b=Number(prompt("b :"));
+        // var c=Number(prompt("c :"));
+
+        // print(a, b, c);
+
+        // function print(d, e, f)
+        // {
+        //     document.write('a, b, c 사칙연산<br><br>');
+        //     document.write('a= '+d+', '+'b= '+e+', '+'c= '+f+'<br><br>');
+        //     document.write(`${d}+${e}+${f}=`+(d+e+f)+'<br>');
+        //     document.write(`${d}-${e}-${f}=`+(d-e-f)+'<br>');
+        //     document.write(`${d}x${e}x${f}=`+(d*e*f)+'<br>');
+        //     document.write(`${d}/${e}/${f}=`+(d/e/f)+'<br>');
+        // }
+
+
+        // 자바스크립트에서 html태그를 제어 하려면 해당 태그를 선택해야 한다.
+        // 특정 태그를 선택하는 방법은 태그명, id, class, name 이다.
+        // 태그명, class, name으로 선택하면 배열의 구조
+        // id로 선택하면 객체단위인데, 단일값이다. 변수 비슷하게 사용가능
+        // '현재 html문서에서'라는 뜻으로 document. 
+        // 태그(엘리먼트)를 찾아와라는 뜻으로 getElement
+        // 태그명, class, name, id 중  어떤걸로 찾을거냐는
+        // id - ById, 
+        // class - ByClassName, 
+        // 태그명 - ByTagName, 
+        // name - ByName
+        // 단, class, 태그명, name으로 선택할 때에는 getElements 이다.
+
+        // function calc()
+        // {
+        //     // num1=Number(prompt("첫 번째 정수"));
+        //     // num2=Number(prompt("두 번째 정수"));
+        //     // sum=num1+num2;
+
+
+        //     document.getElementById("result").innerHTML=sum;
+        // }
+        
+        // function input1()
+        // {
+        //     num1=Number(prompt("정수 입력1"));
+        //     document.getElementById("result").innerHTML=num1;
+        // }
+
+        // function input2()
+        // {
+        //     num2=Number(prompt("정수 입력2"));
+        //     document.getElementById("result2").innerHTML=num2;
+        // }
+
+        // function sum()
+        // {
+        //     total=num1+num2;
+        //     document.getElementById("result3").innerHTML = `${num1}+${num2}=${total}`;
+        // }
+
+        function calc(num3)
+        {
+            var n1 = Number(document.getElementById("num1").value);
+            var n2 = Number(document.getElementById("num2").value);
+
+            if(num3=='+')
+                document.querySelector("#result").innerHTML=n1+n2;
+            else if(num3=='-')
+                document.querySelector("#result").innerHTML=n1-n2;
+            else if(num3=='*')
+                document.querySelector("#result").innerHTML=n1*n2;
+            else if(num3=='/')
+                document.querySelector("#result").innerHTML=n1/n2;
+
+            // if(num3=="plus")
+            //     document.querySelector("#result").innerHTML=n1+n2;
+            // else if(num3=="minus")
+            //     document.querySelector("#result").innerHTML=n1-n2;
+            // else if(num3=="mul")
+            //     document.querySelector("#result").innerHTML=n1*n2;
+            // else if(num3=="div")
+            //     document.querySelector("#result").innerHTML=n1/n2;
+
+        }
+
+        function plus()
+        {
+            calc("plus");
+            // document.getElementById("result").innerHTML=n1+n2;
+            // document.querySelector("#result").innerHTML=n1+n2;
+            // document.querySelctorAll(".resul"); 닫수의 태그 선택 시 
+        }
+
+        function minus()
+        {
+            calc("minus");
+            // document.querySelector("#result").innerHTML=n1-n2;
+        }
+
+        function mul()
+        {
+            calc("mul");
+            // document.querySelector("#result").innerHTML=n1*n2;
+        }
+
+        function div()
+        {
+            calc("div");
+            // document.querySelector("#result").innerHTML=n1/n2;
+        }
+    </script>
+</head>
+<body>
+    <!-- <button onclick="input1()">입력1</button>
+    <button onclick="input2()">입력2</button>
+    <button onclick="sum()">더하기</button>
+    <div id="result"></div>
+    <div id="result2"></div>
+    <div id="result3"></div> -->
+
+    <div id="input_box">
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+    </div>
+
+    <button onclick="calc('+')">더하기</button>
+    <button onclick="calc('-')">빼기</button>
+    <button onclick="calc('*')">곱하기</button>
+    <button onclick="calc('/')">나누기</button>
+
+    <div id="result"></div>
+
+
+</body>
+</html>
