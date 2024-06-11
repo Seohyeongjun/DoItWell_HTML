@@ -1,0 +1,40 @@
+<!-- javascript 함수 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function, 함수</title>
+
+    <script>
+        function calc(num3)
+        {
+            var n1 = Number(document.getElementById("num1").value);
+            var n2 = Number(document.getElementById("num2").value);
+
+            if(num3=='+')
+                document.querySelector("#result").innerHTML=n1+n2;
+            else if(num3=='-')
+                document.querySelector("#result").innerHTML=n1-n2;
+            else if(num3=='*')
+                document.querySelector("#result").innerHTML=n1*n2;
+            else if(num3=='/')
+                document.querySelector("#result").innerHTML=n1/n2;
+        }
+    </script>
+</head>
+<body>
+    <div id="input_box">
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+    </div>
+
+    <button onclick="calc('+')">더하기</button>
+    <button onclick="calc('-')">빼기</button>
+    <button onclick="calc('*')">곱하기</button>
+    <button onclick="calc('/')">나누기</button>
+
+    <div id="result"></div>
+
+</body>
+</html>

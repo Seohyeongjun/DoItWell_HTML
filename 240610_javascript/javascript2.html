@@ -19,9 +19,9 @@
         // addEventListener - 이벤트 등록 시키는 함수
         // addEventListener(이벤트명, 이벤트처리 함수)
 
-        windows.onload=function()
+        window.onload=function() // 익명함수
         {
-            document.getElementById("td1").addEventListener('click', save);
+            document.getElementById("td1").addEventListener('click', save); // save  = 함수이름만 쓴다
         }
 
 
@@ -29,8 +29,6 @@
 
 </head>
 <body>
-    
-
     <h2>오늘의 나를 칭찬하기</h2>
     <input type="text" id="data">
     <button onclick="save()">저장</button>
@@ -50,7 +48,8 @@
     </table>
     <style>
         #board{ border-collapse : collapse; }
-        #board tr td{
+        #board tr td
+        {
             border:1px solid black;
             width:100px; height:100px;
         }

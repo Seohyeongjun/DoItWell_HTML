@@ -1,0 +1,185 @@
+<!-- javascript 함수 3 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 함수형태
+        // 1. 매개변수와 반환값이 없는 함수
+        // 2. 매개변수는 있고 반환값이 없는 함수
+        // 3. 매개변수는 없고 반환값이 있는 함수
+        // 4. 매개변수도 있고 반환값도 있는 함수
+
+        // onload는 브라우저에 화면 표시가 끝나면 발생하는 이벤트
+        // html문서의 모든 리소스(html, css, javascript, 이미지 등등)가 브라우저에 완전히 로드되면 발생하는 이벤트이다. window.onload
+        // onload는 태그에서 발생한다. img, iframe, script, link, video 등
+        window.onload=function()
+        {
+            document.getElementById("power").addEventListener('click', function(){ buttonPress("전원"); });
+            document.querySelector("#increase").addEventListener('click', function(){ buttonPress("온도증가"); });
+            document.querySelector("#reduction").addEventListener('click', function(){ buttonPress("온도감소"); });
+            document.querySelector("#driving").addEventListener('click', function(){ buttonPress("운전선택"); });
+            document.querySelector("#indirect").addEventListener('click', function(){});
+            document.querySelector("#wind").addEventListener('click', function(){});
+        }
+
+
+        let onoff=true;
+        let temp=25;
+        let sel=1;
+        let mode_sel='냉방';
+
+        function buttonPress(target)
+        {
+            // let temp=document.getElementById("temp").innerText;
+            
+            if(target=='전원')
+                power();
+
+            else if(target=='온도증가')
+                temp=tempUpDown(1);
+
+            else if(target=='온도감소')
+                temp=tempUpDown(-1);
+
+            else if(target=='운전선택')
+                mode_sel=driveSelect();
+ 
+            document.getElementById("temp").innerText=temp;
+            document.getElementById("mode").innerText=mode_sel;
+            document.querySelector("#strength").innerText=1;
+        }
+
+        function power()
+        {
+            if(onoff)
+            {
+                document.querySelector("#lcd").style.display="none";
+                onoff=false;
+            }
+
+            else
+            {
+                document.querySelector("#lcd").style.display="block";
+                onoff=true;
+            }
+        }
+
+        function tempUpDown(step)
+        {
+            var nowTemp=Number(document.querySelector('#temp').innerText);
+            return (nowTemp+step);
+        }
+
+        function driveSelect()
+        {   // 냉방, 자동, 제습, 난방, 송풍 순으로 변하도록 동작시킨다.
+
+            sel++;
+            switch(sel)
+            {
+                case(1): return '냉방';
+
+                case(2): return '자동';
+
+                case(3): return '제습';
+
+                case(4): return '난방';
+
+                case(5): sel=0; 
+                        return '송풍';
+
+            }
+            // if(sel==1)
+            // {
+            //     document.getElementById("mode").innerText='냉방';
+            //     sel=2;
+            // }
+            // else if(sel==2)
+            // {
+            //     document.getElementById("mode").innerText="자동";
+            //     sel=3;
+            // }
+            // else if(sel==3)
+            // {
+            //     document.getElementById("mode").innerText='제습';
+            //     sel=4;
+            // }
+            // else if(sel==4)
+            // {
+            //     document.getElementById("mode").innerText='난방';
+            //     sel=5;
+            // }
+            // else if(sel==5)
+            // {
+            //     document.getElementById("mode").innerText='송풍';
+            //     sel=1;
+            // }
+        }
+    </script>
+    <style>
+        #remote{
+            margin:50px auto;
+            display:flex;
+            flex-wrap:wrap;
+            width:400px;
+            gap:10px;            
+        }
+        .bt{
+            box-sizing:border-box;
+            border:2px solid black;
+            width:120px;
+            line-height:150px;                      /* 높이 설정 및 세로축의 가운데에 글씨가 위치한다. */
+            font-size:25px;
+            text-align:center;
+            cursor:pointer;
+       }
+       
+        .bt_power{
+            background-color:red;
+            color:white;
+        }
+
+        .temp{
+            background-color:yellow;
+        }
+
+        .select{            
+            background-color:green;
+            color:white;
+        }
+
+        .wind{            
+            background-color:green;
+            color:white;
+        }
+
+        .winPow{
+            background-color:white;
+        }
+
+    </style>
+
+
+ </head>
+ <body>
+    <div id="lcd">
+        <label>온도</label><b id="temp">25</b><br>
+        <label>운전</label><b id="mode">냉방</b><br>
+        <label>세기</label><b id="strength">1</b>
+    </div>
+
+
+    <div id="remote">
+        <div id="power" class="bt bt_power">전원</div>
+        <div id="increase" class="bt temp temp_up">온도▲</div>
+        <div id="driving" class="bt select">운전선택</div>
+        <div id="indirect" class="bt wind">간접바람</div>
+        <div id="reduction" class="bt temp temp_down">온도▼</div>
+        <div id="wind" class="bt winPow">바람세기</div>
+    </div>
+ </body>
+ </html>
