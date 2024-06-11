@@ -1,0 +1,161 @@
+<!-- -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <style>
+        #wrap{
+            width:200px;
+            height:200px;
+            display:flex;
+            flex-wrap:wrap;
+        }
+        #num{
+            display:flex;
+            flex-wrap:wrap;
+            gap:5px;
+
+            width:200px;
+            text-align:center;
+        }
+        #table{
+            font-size:20px;
+            width:40px;
+            height:30px;
+            border:1px solid black;
+        }
+
+    </style>
+    
+<!--
+1~50까지 숫자를 랜덤하게
+1줄에 4개씩 5줄로 표시하기
+버튼을 클릭하면 화면에 숫자들 표시
+함수 두개 사용(함수의 기능은 알아서 정하기)    
+-->
+
+    <script>/*src="./static/javascript/homework.jv">*/
+
+        window.onload=function()
+        {
+            document.getElementById("button").addEventListener('click', function(){start();});
+        }
+
+        function start()
+        {
+            var num=0;
+
+            for(var i=0; i<5; i++)
+            {
+                for(var j=0; j<4; j++)
+                {
+                    num=Math.floor(Math.random()*50)+1;
+                    num_write(i, j, num);
+                }
+            }
+        }
+
+        function num_write(i, j, num)
+        {
+            if(i==0)
+            {
+                switch(j)
+                {
+                    case 0 : document.querySelector(".table11").innerHTML=num; break;
+                    case 1 : document.querySelector(".table12").innerHTML=num; break;
+                    case 2 : document.querySelector(".table13").innerHTML=num; break;
+                    case 3 : document.querySelector(".table14").innerHTML=num; break;
+                }
+            }
+            else if(i==1)
+            {
+                switch(j)
+                {
+                    case 0 : document.querySelector(".table21").innerHTML=num; break;
+                    case 1 : document.querySelector(".table22").innerHTML=num; break;
+                    case 2 : document.querySelector(".table23").innerHTML=num; break;
+                    case 3 : document.querySelector(".table24").innerHTML=num; break;
+                }
+            }
+            else if(i==2)
+            {
+                switch(j)
+                {
+                    case 0 : document.querySelector(".table31").innerHTML=num; break;
+                    case 1 : document.querySelector(".table32").innerHTML=num; break;
+                    case 2 : document.querySelector(".table33").innerHTML=num; break;
+                    case 3 : document.querySelector(".table34").innerHTML=num; break;
+                }
+            }
+            else if(i==3)
+            {
+                switch(j)
+                {
+                    case 0 : document.querySelector(".table41").innerHTML=num; break;
+                    case 1 : document.querySelector(".table42").innerHTML=num; break;
+                    case 2 : document.querySelector(".table43").innerHTML=num; break;
+                    case 3 : document.querySelector(".table44").innerHTML=num; break;
+                }
+            }
+            else if(i==4)
+            {
+                switch(j)
+                {
+                    case 0 : document.querySelector(".table51").innerHTML=num; break;
+                    case 1 : document.querySelector(".table52").innerHTML=num; break;
+                    case 2 : document.querySelector(".table53").innerHTML=num; break;
+                    case 3 : document.querySelector(".table54").innerHTML=num; break;
+                }
+            }
+        }
+
+    </script>
+    <style>
+        #button{
+            margin:10px 115px;
+            cursor:pointer;
+            color:darkblue;
+            font-size:25px;
+        }
+
+    </style>
+ </head>
+ <body>
+    <div><button id="button">시작</button></div>
+    <div id="wrap">
+        <div id="num">
+            <div id="table" class="table11"></div>
+            <div id="table" class="table12"></div>
+            <div id="table" class="table13"></div>
+            <div id="table" class="table14"></div>
+        </div>
+        <div id="num">
+            <div id="table" class="table21"></div>
+            <div id="table" class="table22"></div>
+            <div id="table" class="table23"></div>
+            <div id="table" class="table24"></div>
+        </div>
+        <div id="num">            
+            <div id="table" class="table31"></div>
+            <div id="table" class="table32"></div>
+            <div id="table" class="table33"></div>
+            <div id="table" class="table34"></div>
+        </div>
+        <div id="num">
+            <div id="table" class="table41"></div>
+            <div id="table" class="table42"></div>
+            <div id="table" class="table43"></div>
+            <div id="table" class="table44"></div>
+        </div>
+        <div id="num">
+            <div id="table" class="table51"></div>
+            <div id="table" class="table52"></div>
+            <div id="table" class="table53"></div>
+            <div id="table" class="table54"></div>
+        </div>
+    </div>
+ </body>
+ </html>
