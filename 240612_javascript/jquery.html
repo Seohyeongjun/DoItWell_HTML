@@ -19,12 +19,53 @@
         $(function()
         {
             // 입력버튼을 클릭하면 동작 할 이벤트 등록하기
-            $("#inputBt").click(join);
+            $("#inputBt").click(join);  // join : 함수명
+
+            $(document).keyup(function(e)
+            {
+                if(e.keyCode==13)       // enter key code :13
+                    join();
+            });
         });
 
-        function join()
+
+        // input태그에 입력한 값 가져와서 div#check에 출력하기
+        // 입력한 데이터(값)를 자바스크립트에서 사용하려면 변수에 저장하여 사용
+        // 입력한 데이터가 아니더라도 데이터가 필요하다면 필요한만큼 변수 선언하여 사용
+        function join()     
         {
+            var userId=$("#id").val();      // val() : value값
+            var userPw=$("#pw").val();
+            var userBirth=$("#birth").val();
             
+            var check=allInputCheck(userId, userPw, userBirth);       // 아이디, 비밀번호, 생년월일이 전부 입력되었는가 확인
+            
+            if(check)
+                $("#check").html(`<div>아이디:${userId}</div> <div>비밀번호:${userPw}</div> <div>생년월일:${userBirth}</div>`);
+        }
+
+        function allInputCheck(id, pw, bir)
+        {
+            if(id=='')      // null은 안됨
+            {    
+                alert('아이디를 입력하세요');
+                $("#id").focus();       // focus() 포커스의 이동(id 자리로)
+                return false;
+            }
+            else if(pw=='')
+            {    
+                alert('비밀번호를 입력하세요');
+                $("#pw").focus(); 
+                return false;
+            }
+            else if(bir=='')
+            {    
+                alert('생년월일을 입력하세요');
+                $("#birth").focus(); 
+                return false;
+            }
+
+            return true;
         }
     </script>
 </head>
