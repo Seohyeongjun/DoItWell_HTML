@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+        <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+ 
+    <script>
+    $(function()
+    {
+        $("#name").hide();
+        $("#age").hide();
+
+        $("#nameInput").click(viewName);
+        $("#ageInput").click(viewAge);
+        $("#buttonInput").click(start);
+    });
+
+    function viewName()
+    {
+        $("#name").show();
+        $("#name").focus();
+
+        $(document).keyup(function(e)
+        {
+            if(e.keyCode==13)
+            {
+                viewAge();
+                $("#age").focus();
+            }
+        });
+    }
+
+    function viewAge()
+    {
+        $("#age").show();
+        $("#age").focus();
+
+        $(document).keyup(function(e)
+        {
+            if(e.keyCode==13)
+            {
+                start();
+                $("#age").blur();   // 포커스 안보이게 함.
+            }
+        });
+    }
+
+    function start()
+    {
+        var userName=$("#name").val();
+        var userAge=$("#age").val();
+
+        var check=allCheck(userName, userAge);
+
+        if(check)
+        {        
+            $("#nameView").html(`${userName}`);
+            $("#ageView").html(`${userAge}`);
+            
+            if(userAge!='')
+                $("#yearView").html(2024-userAge);
+        }
+
+        else
+        {
+            if(userName=='')
+                $("#nameView").html(``);
+            else if(userAge=='')
+                $("#ageView").html(``);
+       }   
+    }
+
+    function allCheck(name, age)
+    {
+        if(name=='')
+        {
+            alert('이름을 입력하세요');
+            $("#name").focus();
+            return false;
+        }
+        else if(age=='')
+        {
+            alert('나이를 입력하세요');
+            $("#age").focus();
+            return false;
+        }
+        return true;
+    }
+/**
+ *  이름입력 버튼과 나이입력 버튼을 각각 클릭하여 input 나타내어 이름과 나이 입력하세요
+ *  등록 버튼을 클릭하여 화면에 이름, 나이, 태어난년도를 출력하세요
+ **/
+
+
+    </script>
+
+</head>
+<body>
+    <button id="nameInput">이름입력</button><input type="text" id="name"><br>
+    <button id="ageInput">나이입력</button><input type="text" id="age"><br>
+    <button id="buttonInput">등록</button><br>
+    <hr>
+    <div>
+        이름 : <b id="nameView"></b><br>
+        나이 : <b id="ageView"></b><br>
+        태어난년도 : <b id="yearView"></b>
+    </div>
+</body>
+</html>

@@ -40,8 +40,22 @@
             
             var check=allInputCheck(userId, userPw, userBirth);       // 아이디, 비밀번호, 생년월일이 전부 입력되었는가 확인
             
+            check = check ? birthCheck(userBirth) : check;
+
             if(check)
                 $("#check").html(`<div>아이디:${userId}</div> <div>비밀번호:${userPw}</div> <div>생년월일:${userBirth}</div>`);
+        }
+
+        function birthCheck(birth)
+        {
+            if(birth.length!=8)        // length : 문자열의 길이, 몇자리인지
+            {
+                alert('주민번호를 8자리 입력하세요');
+                $("#birth").val('');    // 입력한 주민번호 다 지운다.
+                $("#birth").focus();
+                return 0;
+            }
+            return 1; 
         }
 
         function allInputCheck(id, pw, bir)
