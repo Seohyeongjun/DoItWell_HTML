@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+ 
+
+    <!-- javascript -->
+    <script>
+        // window.onload=function()
+        // {
+        //     document.getElementById("inputBt").addEventListener('click', function(){});
+        // }
+
+        $(function()
+        {
+            // 입력버튼을 클릭하면 동작 할 이벤트 등록하기
+            $("#inputBt").click(join);
+        });
+
+        function join()
+        {
+            
+        }
+    </script>
+</head>
+<body>
+    <label>아이디</label><input type="text", id="id"> <br>
+    <label>비밀번호</label><input type="password", id="pw"> <br>
+    <label>생년월일</label><input type="text" id="birth" placeholder="생년월일 8자리 입력하세요"> <br>
+    <button id="inputBt">입력</button>
+    <div id="check">
+
+    </div>
+</body>
+</html>
