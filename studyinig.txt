@@ -17,3 +17,8 @@ http://flukeout.github.io
 
 
 이미지 불러오기 : "https://loremflickr.com/200/200?random=1"
+
+
+
+    <!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

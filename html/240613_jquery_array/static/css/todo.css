@@ -1,0 +1,70 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+ul{
+    list-style-type:none;       /* list type의 모양 삭제 */
+}
+
+#wrap
+{
+    margin:0 auto;
+    width:750px;
+    /* font-size:20px; */
+    border:1px solid black;
+}
+#enroll
+{
+    /* font-size:20px; */
+    background-color:green;
+    width:60px;
+    cursor:pointer;
+    /* color:white; */
+}
+.title
+{
+    padding:10px 0;
+    border-bottom:1px solid #aaa;
+    font-size:20px;
+}
+
+#list li
+{
+    line-height:30px;
+}
+
+#input_wrap
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+    margin:0 auto;
+
+    border-bottom:1px solid #aaa;
+}
+
+#todo_wrap
+{
+    text-align:center;
+}
+#todoList
+{
+    display:flex;
+}
+
+.todo{
+    position:relative;
+    left:80px;
+}
+
+.todoTime{
+    position:relative;
+    left:350px;
+}
+.todoState{
+    position:relative;
+    left:550px;
+}
