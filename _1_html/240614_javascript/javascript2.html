@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        ////////////////////////////////////////////////////////////////////////////////
+        // 단어를 배열에 저장하려고 한다.
+        // 단어가 배열에 존재한다면 저장 안하고
+        // 배열에 없는 단어만 저장이 되도록 한다.
+        // let word=["한강", "금강", "낙동강", "대전", "부산", "광주", "세종"];
+        // let wordOk=true;
+        // function save(){
+        //     var text=$("#str").val();
+        //     // if(word.indexOf(text)==-1)      // 중복된 단어가 있는지 검사. -1이면 중복된 단어가 없음
+        //     // {
+        //     //     word.push(text);
+        //     //     $("#error").text(' ');
+        //     // }
+        //     for(var i=0; i<word.length; i++)
+        //     {
+        //         if(text!=word[i])
+        //             wordOk=false;
+        //     }
+        //     if(wordOk)
+        //     {
+        //         word.push(text);
+        //         $("#error").text(' ');
+        //     }
+        //     else
+        //         $("#error").text('중복 단어 입니다. 다시 입력하세요.');
+
+        //     $("#print").text(word);
+        // }
+
+
+        ////////////////////////////////////////////////////////////////////////////////
+
+        let board=[];
+
+        $(function()
+        {
+            init(); // 배열에 데이터 저장(초기화 작업시 init 또는 initial)
+            view(); // div#board 배열값 출력
+        });
+
+        function init()     // 1~50 랜덤값 배열에 저장 25개
+        {
+            var name;
+            var a=true;
+            var table=25;
+            for(var i=0; i<table; i++)
+            {
+                name=Math.floor(Math.random()*50)+1;
+                if(board.indexOf(name)==-1)
+                    board[i]=name;
+                else
+                {
+                    while(board.indexOf(name)!=-1)
+                    {
+                        name=Math.floor(Math.random()*50)+1;
+                    }
+                    board[i]=name;
+                }
+            }
+        }
+
+        function view()
+        {
+            var num='';
+            for(var j=0; j<5; j++)
+            {    
+                num+='<p>';
+                for(var k=0; k<5; k++)
+                {
+                    num+="<span>"+board[j*5+k]+"</span>"
+                }
+                num+='</p>'
+            }
+
+            $("#board").html(num);
+        }
+
+
+
+
+    </script>
+    <style>
+        span{display:inline-block;width:50px;}
+
+    </style>
+</head>
+<body>
+ <!------------------------------------------------------->
+    <!-- <input type="text" id="str">
+    <p id="error" style="font-size:15px; color:red;"></p>
+    <button onclick="save()">저장</button>
+    <div id="print"></div> -->
+
+<!------------------------------------------------------->
+
+    <div id="board">
+
+
+    </div>
+   
+</body>
+</html>

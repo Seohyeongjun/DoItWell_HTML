@@ -1,0 +1,61 @@
+/******************
+    bingo game
+******************/
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+table{ border-collapse:collapse;}
+
+#control{
+    position:fixed;
+    left:50px;
+    top:100px;
+    font-size:20px;
+    padding:15px;
+    border:1px solid #aaa;
+    border-radius:10px;
+}
+
+#start{
+    background:burlywood;
+    color:#222;
+    padding:7px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#screen{
+    /* width:230px; */
+    display:none;
+
+    background:aquamarine;
+    color:#222;
+    margin-top:5px;
+    padding:7px 15px;
+    border-radius:10px;
+}
+
+#wrap{
+    width:600px;
+    margin:100px auto;
+    text-align:center;
+}
+
+#wrap .boardBox{
+    width:100%;
+}
+
+#wrap .boardBox .num{
+    border:1px solid black;
+    width:20%;
+    height:120px;
+    font-size:30px;
+}
+
+#wrap .boardBox .num:hover{
+    background-color:#ddd;
+}
