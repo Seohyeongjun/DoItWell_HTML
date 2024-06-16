@@ -11,7 +11,7 @@ let time=0;             // setInterval()의 핸들값
 let timeOn=true;
 let bingo=[];           // 25개 숫자를 저장할 빈 배열 선언
 let bingoCom=[];        // 25개 숫자를 저장할 빈 배열 선언
-
+let turnFlag=0;
 // let crossCk=0;
 
 $(function()            // 브라우저에 모두 표시되면 실행되는 함수(window.onload)
@@ -78,8 +78,12 @@ function start()
     init('c');     // 25개 숫자 배열에 저장
     drawUser('c');     // 화면에 출력
 
-    $(".num").click(bingoCheckUser);
-    $(".numCom").click(bingoCheckCom);
+    if(turnFlag==0)
+        $(".num").click(bingoCheckUser);
+
+    else 
+        $(".numCom").click(bingoCheckCom);
+
 }
 
 function init(user)
@@ -142,7 +146,9 @@ function drawUser(user) // 배열의 값 테이블(td)에 출력
 
 function bingoCheckUser(crossCkCom)
 { 
-    crossCkUser=0;
+    var crossCkUser=0;
+    // turnFlag=1;
+      
     // jquery에서 css 넣는 방법 : .css('속성', '값');
     $(this).css('background','darkgreen'); // this는 클릭한 td 이다.
     $(this).css('color','white');
@@ -150,13 +156,14 @@ function bingoCheckUser(crossCkCom)
     // 클릭한 td에 표시된 숫자를 배열에서 0으로 변경
     // 배열에 0이 저장된 곳은 클릭한 숫자이다.
     var idx=$(".num").index(this);  // 클릭한 td가 몇번째 인덱스인가
-    crossCkUser=bingo[idx];
+    crossCkUser=bingo[idx]; 
     bingo[idx]=0;   
 
-    if(crossCkCom>0)
+    if(crossCkCom>0)                        // 컴퓨터의 빙고숫자와 유저의 숫자 비교하여 체크하기
     {
         var num=bingo.indexOf(crossCkCom);
-        bingo[num]=0; 
+        bingo[num]=0;
+        // turnFlag=0;
 
         if(num!=-1)
         {        
@@ -249,12 +256,19 @@ function bingoCheckUser(crossCkCom)
         alert('user 빙고!!!!!!!');
         timeOn=false;
     }
-    bingoCheckCom(crossCkUser);
+
+    if(!turnFlag)
+    {
+        bingoCheckCom(crossCkUser);
+        turnFlag=1;
+    }
 
 }
 function bingoCheckCom(crossCkUser)
 {   
-    crossCkCom=0;
+    var crossCkCom=0;
+    // turnFlag=0;
+    
     // jquery에서 css 넣는 방법 : .css('속성', '값');
     $(this).css('background','darkred'); // this는 클릭한 td 이다.
     $(this).css('color','white');
@@ -266,7 +280,8 @@ function bingoCheckCom(crossCkUser)
     if(crossCkUser>0)
     {
         var num=bingoCom.indexOf(crossCkUser);
-        bingoCom[num]=0; 
+        bingoCom[num]=0;
+        // turnFlag=1;
 
         if(num!=-1)
         {        
@@ -351,6 +366,10 @@ function bingoCheckCom(crossCkUser)
         alert('com 빙고!!!!!!!');
         timeOn=false;
     }
-    bingoCheckUser(crossCkCom);
+    if(turnFlag)
+    {
+        bingoCheckUser(crossCkCom);
+        turnFlag=0;
+    }
 
 }
