@@ -12,6 +12,15 @@ table{ border-collapse:collapse;}
 
 #control{
     position:fixed;
+    left:40%;
+    top:30px;
+    font-size:20px;
+    padding:15px;
+    border:1px solid #aaa;
+    border-radius:10px;
+}
+#controluser{
+    position:fixed;
     left:50px;
     top:30px;
     font-size:20px;
@@ -19,6 +28,7 @@ table{ border-collapse:collapse;}
     border:1px solid #aaa;
     border-radius:10px;
 }
+
 #controlCom{
     position:fixed;
     right:50px;
@@ -36,9 +46,18 @@ table{ border-collapse:collapse;}
     border-radius:10px;
     cursor:pointer;
 }
+
+#user{
+    background:darkgreen;
+    color:#ddd;
+    padding:7px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
 #computer{
-    background:lightseagreen;
-    color:#222;
+    background:darkred;
+    color:#ddd;
     padding:7px 15px;
     border-radius:10px;
     cursor:pointer;
@@ -54,11 +73,21 @@ table{ border-collapse:collapse;}
     border-radius:10px;
 }
 
+#screenuser{
+    display:none;
+
+    background:darkgreen;
+    color:#ddd;
+    margin-top:5px;
+    padding:7px 30px 7px 15px;
+    border-radius:10px;
+}
+
 #screenCom{
     display:none;
 
-    background:lightcoral;
-    color:#222;
+    background:darkred;
+    color:#ddd;
     margin-top:5px;
     padding:7px 30px 7px 15px;
     border-radius:10px;
@@ -73,12 +102,12 @@ table{ border-collapse:collapse;}
  
 }
 #wrapUser{
-    width:400px;
+    width:450px;
     margin:150px auto;
     /* text-align:center; */
 }
 #wrapCom{
-    width:400px;
+    width:450px;
     margin:150px auto;
     /* text-align:center; */
 }
@@ -94,13 +123,13 @@ table{ border-collapse:collapse;}
 #wrapUser .boardBox .num{
     border:1px solid black;
     width:20%;
-    height:80px;
+    height:90px;
     font-size:30px;
 }
 #wrapCom .boardBoxCom .numCom{
     border:1px solid black;
     width:20%;
-    height:80px;
+    height:90px;
     font-size:30px;
 }
 
