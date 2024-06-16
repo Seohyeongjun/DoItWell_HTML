@@ -11,7 +11,8 @@ let time=0;             // setInterval()의 핸들값
 let timeOn=true;
 let bingo=[];           // 25개 숫자를 저장할 빈 배열 선언
 let bingoCom=[];        // 25개 숫자를 저장할 빈 배열 선언
-let turnFlag=0;
+let turnFlag='u';
+let comTimeOn=false;
 
 $(function()            // 브라우저에 모두 표시되면 실행되는 함수(window.onload)
 {
@@ -58,7 +59,15 @@ function start()
     time=setInterval(function()
     {
         if(timeOn)
+        {    
             playSec++;
+
+            if(turnFlag=='c')
+            {    
+                comTimeOn=true;
+                bingoCheckCom();
+            }
+        }
 
         if(playSec>=60)
         {
@@ -145,7 +154,7 @@ function drawUser(user) // 배열의 값 테이블(td)에 출력
 function bingoCheckUser()
 { 
     var crossCkUser=0;
-    if(turnFlag==0)
+    if(turnFlag=='u')
     {  
         // jquery에서 css 넣는 방법 : .css('속성', '값');
         $(this).css('background','darkgreen'); // this는 클릭한 td 이다.
@@ -158,7 +167,7 @@ function bingoCheckUser()
         bingo[idx]=0;   
 
         crossCheck(crossCkUser);
-        turnFlag=1;
+        turnFlag='c';
 
         var bingo1to5=0;            // 가로 1열 1~5
         var bingo6to10=0;           // 가로 2열 6~10
@@ -235,13 +244,12 @@ function bingoCheckUser()
             timeOn=false;
         }
     }
-
-    bingoCheckCom();
+    // bingoCheckCom();
 }
 
 function crossCheck(user)
 {
-    if(turnFlag==1 && user>0)
+    if(turnFlag=='c' && user>0)
     {
         var num=bingo.indexOf(user);
         bingo[num]=0;
@@ -254,7 +262,7 @@ function crossCheck(user)
         }
     }
     
-    else if(turnFlag==0 && user>0)
+    else if(turnFlag=='u' && user>0)
     {
         var num=bingoCom.indexOf(user);
         bingoCom[num]=0;
@@ -285,8 +293,9 @@ function bingoCheckCom()
 {   
     var crossCkCom=0;
 
-    if(turnFlag==1)
+    if(turnFlag=='c' && comTimeOn==true)
     {
+        
         var idx=comGetNum();
 
         var td=$(".numCom");
@@ -297,7 +306,8 @@ function bingoCheckCom()
         bingoCom[idx]=0;                // 해당 td 위치와 같은 bingo배열에 0으로 변경
 
         crossCheck(crossCkCom);
-        turnFlag=0;
+        turnFlag='u';
+        comTimeOn=false;
 
         var bingo1to5=0;                // 가로 1열 1~5
         var bingo6to10=0;               // 가로 2열 6~10
