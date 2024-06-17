@@ -90,7 +90,6 @@ function start()
     drawUser('c');     // 화면에 출력
 
     $(".num").click(bingoCheckUser);
-    // $(".numCom").click(bingoCheckCom);
 }
 
 function init(user)
@@ -101,13 +100,13 @@ function init(user)
 
         for(var i=0; i<25; i++)
         {
-            name=Math.floor(Math.random()*50)+1;        // 1~50개의 랜덤 숫자를 25개만 받는다
+            name=Math.floor(Math.random()*100)+1;        // 1~50개의 랜덤 숫자를 25개만 받는다
             if(bingo.indexOf(name)==-1)
                 bingo[i]=name;
             else
             {
                 while(bingo.indexOf(name)!=-1)
-                    name=Math.floor(Math.random()*50)+1;
+                    name=Math.floor(Math.random()*100)+1;
 
                 bingo[i]=name;
             }
@@ -119,13 +118,13 @@ function init(user)
 
         for(var i=0; i<25; i++)
         {
-            name=Math.floor(Math.random()*50)+1;        // 1~50개의 랜덤 숫자를 25개만 받는다
+            name=Math.floor(Math.random()*100)+1;        // 1~50개의 랜덤 숫자를 25개만 받는다
             if(bingoCom.indexOf(name)==-1)
                 bingoCom[i]=name;
             else
             {
                 while(bingoCom.indexOf(name)!=-1)
-                    name=Math.floor(Math.random()*50)+1;
+                    name=Math.floor(Math.random()*100)+1;
 
                 bingoCom[i]=name;
             }
@@ -154,6 +153,7 @@ function drawUser(user) // 배열의 값 테이블(td)에 출력
 function bingoCheckUser()
 { 
     var crossCkUser=0;
+
     if(turnFlag=='u')
     {  
         // jquery에서 css 넣는 방법 : .css('속성', '값');
@@ -164,7 +164,7 @@ function bingoCheckUser()
         // 배열에 0이 저장된 곳은 클릭한 숫자이다.
         var idx=$(".num").index(this);  // 클릭한 td가 몇번째 인덱스인가
         crossCkUser=bingo[idx]; 
-        bingo[idx]=0;   
+        bingo[idx]=0;  
 
         crossCheck(crossCkUser);
         turnFlag='c';
@@ -240,11 +240,13 @@ function bingoCheckUser()
 
         if(bingoCount>=5 && timeOn!=false)
         {
+            if(bingoCount>5)
+                alert('user 빙고 over !!');
+
             alert('user 빙고!!!!!!!');
             timeOn=false;
         }
     }
-    // bingoCheckCom();
 }
 
 function crossCheck(user)
@@ -279,10 +281,10 @@ function crossCheck(user)
 function comGetNum()
 {
     var index_num;
-    var num=Math.floor(Math.random()*50)+1;
+    var num=Math.floor(Math.random()*100)+1;
 
     while(bingoCom.indexOf(num)==-1)
-        num=Math.floor(Math.random()*50)+1;
+        num=Math.floor(Math.random()*100)+1;
 
     index_num=bingoCom.indexOf(num);
 
@@ -384,7 +386,12 @@ function bingoCheckCom()
     
         if(bingoCount>=5 && timeOn!=false)
         {
-            alert('com 빙고!!!!!!!');
+            if(bingoCount>5)
+                alert('com 빙고 over !!');
+
+            else
+                alert('com 빙고 !!!!!');
+
             timeOn=false;
         }
     }

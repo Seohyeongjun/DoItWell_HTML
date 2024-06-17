@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script>
+
+    // 각 반 학생 성적을 저장하여 평균을 낸다.
+    // let stdScore=[50, 77, 88, 99, 34];
+    // let stdScore2=[,,,];
+
+    // 2차원 배열
+    let stdScore=[
+        [50, 70, 60, 55, 30],
+        [60, 40, 70, 90, 60],
+        [90, 50, 77, 67, 87]
+    ];
+
+    console.log(stdScore[0][2]);
+
+    for(var i=0; i<3; i++)
+    {
+        for(var k=0; k<5; k++)
+            document.write(stdScore[i][k]+"&nbsp;");    //&nbsp는 공백(space)
+        document.write("<br>");
+    }
+
+    
+    // 주차장 1~4층 건물
+    // 각층별 주차 차량수와 잔여 주차구역을 표시 하고자 한다면
+    // 2차원 배열을 사용한다.
+
+    let pk=[new Array(15).fill(0), new Array(15).fill(0), new Array(15).fill(0), new Array(20).fill(0)];    // fill(0) 0으로 배열을 초기화
+
+    for(var i=0; i<pk.length; i++)
+    {
+        for(var k=0; k<pk[i].length; k++)
+            document.write(pk[i][k]+"&nbsp;")
+        document.write("<br>");
+    }
+
+    // 다음 2차원 배열의 각 행의 총합을 구하여 출력하세요.
+    // 각 행은 num[0], num[1], num[2]
+    let num=[[10, 20, 30, 40], [1, 4, 5], [23, 45, 56, 3, 9, 5], [23, 45, 56, 3, 9, 5, 10, 10, 10], [23, 45, 56, 3, 9, 5, 10, 20, 20]];
+
+    let total=[];
+    for(var i=0; i<num.length; i++)
+    {
+        total[i]=0;
+        for(var k=0; k<num[i].length; k++)
+            total[i]+=num[i][k];
+
+        document.write(`${i+1}번 행의 총합 : ${total[i]}`+"<br>");
+    }
+
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
