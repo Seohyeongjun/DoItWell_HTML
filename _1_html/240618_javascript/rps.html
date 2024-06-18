@@ -1,0 +1,55 @@
+<!-- rps.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script src="./static/javascript/rps.js"></script>
+<link rel="stylesheet" href="./static/css/rps.css">
+
+ </head>
+ <body>
+    <div id="vs"><img src="./static/image/vs5.png"></div>
+    <div id="buttonWrap">
+        <button id="game">시작</button>
+        <button id="record">전적</button>
+    </div>
+    <div id="wrap">
+        <div id="comArea" class="area">
+            <div class="rpsImg">
+                <img id="comImg">
+            </div>
+        </div>
+        <div id="userArea" class="area">
+            <div class="rpsImg">
+                <div class="userImg"><img src="./static/image/scissors.png"></div>
+                <div class="userImg"><img src="./static/image/rock.png"></div>
+                <div class="userImg"><img src="./static/image/paper.png"></div>
+            </div>   
+        </div>
+    </div>
+
+    <div id="modal" style="display:none">
+        <div id="modalBackground"></div>
+        <div id="modalData">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th class="user">유저</th>
+                        <th class="com">컴퓨터</th>
+                        <th class="outcom">결과</th>
+                    </tr>
+                </thead>
+                <tbody id="data"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+ </body>
+ </html>

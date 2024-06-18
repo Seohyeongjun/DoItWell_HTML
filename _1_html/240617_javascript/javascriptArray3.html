@@ -49,7 +49,6 @@ $(function()
                 tdClass="me";
                 y=i;
                 x=k;           
-
             }
             out+=`<td class="${tdClass}">`;
                 
@@ -63,48 +62,68 @@ $(function()
 
 });
 
-function keyCon(num, remove, add)
-{
-    board[y][x]=num;                          // 현재 위치에 클래스명 blank로 변경
-    $("td").eq(y*21+x).removeClass(remove);   // 이동할 위치에 클래스명 me로 변경
-    $("td").eq(y*21+x).addClass(add);
-}
+// function keyCon(num, remove, add)
+// {
+//     board[y][x]=num;                          // 현재 위치에 클래스명 blank로 변경
+//     $("td").eq(y*21+x).removeClass(remove);   // 이동할 위치에 클래스명 me로 변경
+//     $("td").eq(y*21+x).addClass(add);
+// }
+
 $(document).keyup(function(event)
 { 
     // alert(event.keyCode); // w-87, a-65, s-83, d-68
     var key=event.keyCode;
+    var stepx=x, stepy=y;
     // alert(typeof key);
+    board[y][x]=0;                          // 현재 위치에 클래스명 blank로 변경
+    $("td").eq(y*21+x).removeClass("me");   // 이동할 위치에 클래스명 me로 변경
+    $("td").eq(y*21+x).addClass("blank");
 
     switch(key){
-        case 87: // up
-                keyCon(0, "me", "blank");
-
-                if(y>1)
-                    y--;
-                keyCon(2, "blank", "me");
+        case 87: // w, up
+                stepy--;
+                // keyCon(0, "me", "blank");
+                // if(board[y-1][x]!=1)
+                // if(y>1)
+                //     y--;
+                // keyCon(2, "blank", "me");
                 break;
-        case 65: // left
-                keyCon(0, "me", "blank");
-
-                if(x>1)
-                    x--;
-                keyCon(2, "blank", "me");
+        case 65: // a, left
+                stepx--;
+                // keyCon(0, "me", "blank");
+                // if(board[y][-1x]!=1)
+                // if(x>1)
+                //     x--;
+                // keyCon(2, "blank", "me");
                 break;
-        case 83: // down
-                keyCon(0, "me", "blank");
-
-                if(y<12)
-                    y++;
-                keyCon(2, "blank", "me");
+        case 83: // s, down
+                stepy++;
+                // keyCon(0, "me", "blank");
+                // if(board[y+1][x]!=1)
+                // if(y<12)
+                //     y++;
+                // keyCon(2, "blank", "me");
                 break;
-        case 68: // right
-                keyCon(0, "me", "blank");
-
-                if(x<19)
-                    x++;
-                keyCon(2, "blank", "me");
+        case 68: // d, right
+                stepx++;
+                // keyCon(0, "me", "blank");
+                // if(board[y][x+1]!=1)
+                // if(x<19)
+                //     x++;
+                // keyCon(2, "blank", "me");
                 break;
     }
+
+    if(board[stepy][stepx]!=1)
+    {
+        y=stepy;
+        x=stepx;
+    }
+    
+    board[y][x]=2;                          // 현재 위치에 클래스명 blank로 변경
+    $("td").eq(y*21+x).removeClass("blank");   // 이동할 위치에 클래스명 me로 변경
+    $("td").eq(y*21+x).addClass("me");
+
 });
 
 
