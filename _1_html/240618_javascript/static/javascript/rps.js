@@ -35,7 +35,7 @@ function gameRecord()
                 <td class="user"><img src="./static/image/${record[0][i]}"></td>
                 <td class="com"><img src="./static/image/${record[1][i]}"></td>}
                 <td class="outcome">${record[2][i]}</td>
-            <tr>
+            </tr>
             `)
     }
     

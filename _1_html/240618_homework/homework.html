@@ -4,15 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="./static/javascript/card.js"></script>
+    <link rel="stylesheet" href="./static/css/card.css">
+    
     <style>
 
     </style>
 
 </head>
 <body>
-<!--
+    <div id="page0">
+        <div id="page0GameName" class="gameName">카드 맞추기 게임</div>
+        <button id="selEasy" class="p0button">EASY</button>
+        <button id="seldifficult" class="p0button">DIFFICULT</button>
+    </div> 
+    <!-- style="display:none" -->
+    <div id="gamePage" style="display:none">
+        <div id="gamePageHome">
+            <div id="gamePageName" class="gameName">카드 맞추기 게임</div>
+            <button id="goHome">홈</button>
+            <button id="restart">재시작</button>
+        </div>
+        <div id="gameArea">
+            <div id="playArea">
+                <tr >
+                    <td class="easy">a</td>
+                    <td class="easy">a</td>
+                    <td class="easy">a</td>
+                </tr>
+                <tr >
+                    <td class="easy">b</td>
+                    <td class="easy">b</td>
+                    <td class="easy">b</td>
+                </tr>
+                <tr>
+                    <td class="easy">c</td>
+                    <td class="easy">c</td>
+                    <td class="easy">c</td>
+                </tr>
+            </div>
+            <div id="conArea">
+                <li id="time"><b>타이머</b></li>
+                <b id="timer"></b>
+                <button id="start"><b>시 작</b></button>
+                <button id="end"><b>종 료</b></button>
+                <b id="levelText">level</b>
+                <b id="level"></b>
+            </div>
+        </div>
+    </div>
 
 
--->
 </body>
 </html>
