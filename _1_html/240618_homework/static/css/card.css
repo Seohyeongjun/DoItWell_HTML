@@ -7,9 +7,11 @@
     top:50%;
     transform:translate(-50%, -50%);
 }
+
 li{
     list-style-type:none;       /* list type의 모양 삭제 */
 }
+
 *{   box-sizing:border-box; width:100%; }
 
 body{margin:0;}
@@ -42,7 +44,12 @@ body{margin:0;}
     margin-bottom:15px;
     background-color:lightgreen;
 }
-#seldifficult{
+#selNomal{
+    margin-bottom:15px;
+    background-color:lightseagreen;
+}
+
+#selHard{
     background-color:lightsalmon;
 }
 
@@ -81,8 +88,6 @@ body{margin:0;}
     cursor:pointer;
     width:10%;
     margin:0 20px;
-
-/
 }
 
 #restart{
@@ -127,12 +132,49 @@ body{margin:0;}
 
 .easy{
     height:130px;
+    width:200px;
+    border:1px solid red;
+    background:white;
+}
+
+.nomalTable{
+    padding:10px;
+    border:2px solid green;
+    border-radius:10px;
+    margin-right:10px;
+    background-color:lightgrey;
+    font-size:30px;
+    text-align:center;
+    display:flex;
+}
+
+.nomal{
+    height:103px;
+    width:150px;
+    border:1px solid red;
+    background:white;
+}
+
+.hardTable{
+    padding:10px;
+    border:2px solid green;
+    border-radius:10px;
+    margin-right:10px;
+    background-color:lightgrey;
+    font-size:30px;
+    text-align:center;
+    display:flex;
+}
+
+.hard{
+    height:85px;
     width:150px;
     border:1px solid red;
     background:white;
 }
 
 #conArea{
+    margin-left:10px;
     height:100%;
     width:25%;
     border:2px solid red;
@@ -176,28 +218,29 @@ body{margin:0;}
 
 }
 #end{
-    background-color:lightgoldenrodyellow;
+    background-color: red;
+    color:white;
     font-size:25px;
     padding:10px;
     border-radius:5px;
     position:relative;
     display:flex;
-    top:30%;
+    top:28%;
     cursor:pointer;
  
 }
 #levelText{
     position:relative;
     display:flex;
-    top:45%;
+    top:53%;
     padding:0 5px;
 
 }
 #level{
     position:relative;
     display:flex;
-    top:46%;
-    font-size:25px;
+    top:55%;
+    font-size:20px;
     color:darkred;
     padding:0 5px;
     /* border:1px solid black;
