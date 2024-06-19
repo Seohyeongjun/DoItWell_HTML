@@ -15,7 +15,7 @@
         var name0={name:"홍길동", age:26, add:"논산"};
         var name1={name:"이순신", age:35, add:"여수"};
         
-        document.write(name0.add);
+        // document.write(name0.add);
         // 객체 생성 방법2
         // 생성자 함수를 통해 객체 생성
         function book(t, a, y)
@@ -32,16 +32,74 @@
 
         ////////////////////////////////////////////////
         // 영화- 영화제목, 감독, 장르에 대해 저장할 수 있는 생성자 함수와 객체 2개를 만드시오.
-        function move(name, dir, type){
-            this.title=name;
+        // function move(name, dir, type){
+        //     this.title=name;
+        //     this.director=dir;
+        //     this.type=type;
+        // }
+
+        // let movieList = new Array();
+        // let movieList =[];  // movie 객체를 저장할 배열
+
+        // movieList.push(new movie("원더랜드", "김태용", "드라마"));
+        // movieList.push(new movie("드라이브", "박동희", "스릴러"));
+        // movieList.push(new movie("저수지의 개들", "쿠엔틴", "느와르"));
+        // movieList.push(new movie("범죄도시4", "허명행", "액션"));
+        // movieList.push(new movie("인사이드 아웃", "켈리", "애니메이션"));
+
+        function movie(name, dir, type)
+        {
+            this.name=name;
             this.director=dir;
-            this.type=type;
+            this.genre=type;
+            // this.print=function(){
+            //     document.write(`<p><b>${this.name})</b> <span>${this.director}</span>
+            //         <span>${this.genre}</span></p>`);
+            // }; // 메서드
         }
 
-        move1=new move("베트맨", "abc", "액션");
-        move2=new move("아이언맨", "qwer", "액션");
+        // movie.prototype.print=function(a){
+        //     document.write(`<p><b>${this.name}</b><span>${this.director}</span>
+        //         <span>${this.genre}</span></p>`);
+        //     };
 
-        document.write(move1.type);
+        // prototype
+        Array.prototype.abc = function(){ alert("프로토타입으로 만든 함수");};
+        // alert(document.aa);
+        // let word=new Array();
+        // word.abc();
+
+        // document.prototype.getId=function(id, func){
+        //     return document.getElementById(id).addEventListener('click', func);
+        // };
+
+        // document.prototype.aa=100;
+        movie.prototype.국가='한국';
+        document.write(movie.name+'<br>');
+        document.write(movie.국가+'<br>');
+
+        let m = new movie("범죄도시","홍길동","액션");
+        m.국가="미국";
+        document.write(m.name+"<br>");
+        document.write(m.국가+"<br>");
+
+        let m2 = new movie("원더랜드","박보검","드라마");
+        document.write(m2.name+"<br>");
+        document.write(m2.국가+"<br>");
+
+
+
+        // movieList[0].print;      //??
+
+        // move1=new move("베트맨", "abc", "액션");
+        // move2=new move("아이언맨", "qwer", "액션");
+
+        // document.write(movieList[0].director+"<br>");
+
+        // for(var i=0; i<movieList.length; i++)
+        // {
+        //     document.write(movieList[i].name+" "+movieList[i].director+" "+movieList[i].genre+"<br>");
+        // }
 
 
 
@@ -55,14 +113,14 @@
 </html>
 <script>
 
-    let d=document.getElementById("box");
-    console.log(d);
+    // let d=document.getElementById("box");
+    // console.log(d);
 
-    document.write("<br>"+d.id); // 객체에서 접근연산자이다.
-    document.write("<br>"+d.className);
-    document.write("<br>"+d.localName);
-    d.className='area1';
-    document.write("<br>"+d.className);
+    // document.write("<br>"+d.id); // 객체에서 접근연산자이다.
+    // document.write("<br>"+d.className);
+    // document.write("<br>"+d.localName);
+    // d.className='area1';
+    // document.write("<br>"+d.className);
     // d.hidden=true;
 
 

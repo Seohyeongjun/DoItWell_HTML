@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // let student={name:"이순신", age:19, tall:180}; //객체 선언
+        // document.write(student.name);
+
+        // // JSON.stringify  : 자바스크립트 객체를 문자열로 변환
+        // // JSON.parse      : 문자열을 자바스크립트 객체로 변환 
+
+        // let str=JSON.stringify(student);
+        // document.write('<br>'+str);
+        
+        // student.json // .json은 주석처리가 안된다.
+        // const xml=new XMLHttpRequest();
+        // xml.onload=function(){
+        //     var std=JSON.parse(this.responseText);
+        //     view(std);
+        // //    document.write(std[1].name);
+        // //    document.write(std[1].age);
+        // };
+
+        // xml.open( "GET", "student.json");   // 서버로부터 전달 받음
+        // xml.send();                         // 서버로 전달 함
+
+        // let std=JSON.parse(this.responseText);
+        // document.write("<br>"+std.name);
+
+        // function view(std)
+        // {
+        //     for(var i=0; i<std.length; i++)
+        //     {   
+        //         if(std[i].name[0].indexOf("김")!=-1) // 또는 std[i].name.indexOf("김")==0
+        //             document.write(std[i].name+" "+std[i].age+" "+std[i].tall+"<br>");
+        //     }
+        // }
+
+        ////////////////////////////////////////////
+        // 대전 광역시 중구의 광역시 코드와 시군구 코드를 출력하세요
+
+        const xml=new XMLHttpRequest();
+        xml.onload=function(){
+            var std=JSON.parse(this.responseText);
+            view(std);
+        };
+        xml.open( "GET", "sigu.json");   // 서버로부터 전달 받음
+        xml.send();                         // 서버로 전달 함
+
+        function view(std)
+        {
+            for(var i=0; i<std.length; i++)
+            {   
+                if(std[i].법정동명.indexOf("대전광역시 중구")!=-1) // 또는 std[i].name.indexOf("김")==0
+                    document.write(std[i].법정동명+" "+std[i].광역시도코드+" "+std[i].시군구코드+"<br>");
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
