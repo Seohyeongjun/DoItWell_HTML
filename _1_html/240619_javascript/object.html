@@ -1,0 +1,76 @@
+<!-- object.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        // 객체 생성 방법1
+        // 배열을 통해 객체 생성
+        var name0={name:"홍길동", age:26, add:"논산"};
+        var name1={name:"이순신", age:35, add:"여수"};
+        
+        document.write(name0.add);
+        // 객체 생성 방법2
+        // 생성자 함수를 통해 객체 생성
+        function book(t, a, y)
+        {
+            this.title=t;
+            this.author=a;
+            this.year=y;
+        }
+
+        book1=new book("자바", "홍길동", 2014);
+        book2=new book("html", "홍길동", 2024);
+
+        // document.write(book1.title);
+
+        ////////////////////////////////////////////////
+        // 영화- 영화제목, 감독, 장르에 대해 저장할 수 있는 생성자 함수와 객체 2개를 만드시오.
+        function move(name, dir, type){
+            this.title=name;
+            this.director=dir;
+            this.type=type;
+        }
+
+        move1=new move("베트맨", "abc", "액션");
+        move2=new move("아이언맨", "qwer", "액션");
+
+        document.write(move1.type);
+
+
+
+    </script>
+</head>
+<body>
+    <!-- <div id="box" class="area" onmouseover="javascript:alert('마우스!!');">
+        나는 div이다
+    </div> -->
+</body>
+</html>
+<script>
+
+    let d=document.getElementById("box");
+    console.log(d);
+
+    document.write("<br>"+d.id); // 객체에서 접근연산자이다.
+    document.write("<br>"+d.className);
+    document.write("<br>"+d.localName);
+    d.className='area1';
+    document.write("<br>"+d.className);
+    // d.hidden=true;
+
+
+
+
+    let a=document.querySelector("#box");
+    console.log(a);
+
+    let b=$("#box");
+    console.log(b);
+</script>

@@ -139,7 +139,7 @@ function drawUser(user) // 배열의 값 테이블(td)에 출력
         var td=$(".num");
 
         for(var i=0; i<td.length; i++)
-            td.eq(i).text(bingo[i]);        // td.eq(i).text : table태그로 접근, jquery의 방식
+            td.eq(i).text(bingo[i]);            // td.eq(i).text : table태그로 접근, jquery의 방식
     }
     else if(user=='c')
     {

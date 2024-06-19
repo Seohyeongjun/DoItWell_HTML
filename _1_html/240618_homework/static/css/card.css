@@ -99,34 +99,37 @@ body{margin:0;}
     position:relative;
     display:flex;
     height:100%;
-    width:100%;
+    /* width:100%; */
     margin:20px auto;
     padding-top:15px;
-    
-    /* width:50%; */
 
 }
 #playArea{
-    /* position:relative;
-    display:flex; */
-    width:70%;
-    /* height:100%; */
-    padding:30px;
+    width:80%;
+
+    /* display:flex; */
+    /* flex-wrap:wrap; */
+    /* text-align:center; */
+    /* justify-content:center; */
+    /* align-items:center; */
+
+}
+.easyTable{
+    padding:10px;
     border:2px solid green;
     border-radius:10px;
     margin-right:10px;
     background-color:lightgrey;
     font-size:30px;
-
+    text-align:center;
+    display:flex;
 }
 
 .easy{
-    position:relative;
-    display:flex;
-
-    width:200px;
-    height:200px;
+    height:130px;
+    width:150px;
     border:1px solid red;
+    background:white;
 }
 
 #conArea{
