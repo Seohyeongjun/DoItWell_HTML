@@ -4,8 +4,9 @@
 let MinCounter=2;
 let timerSec=0;
 let timerMin=MinCounter;
-let cardNum1=[];
-let cardNum2=[];
+let cardNum=[];
+let cardNumRandom=[];
+
 let cardNumX=3;
 let cardNumY=3;
 let easyGameCardNum=6;
@@ -28,7 +29,7 @@ function gameHome()
 {
     $("#gamePage").hide();
     $("#page0").show();
-    cardNum1=[];
+    cardNum=[];
 }
 function game(level)
 {
@@ -68,38 +69,95 @@ function getImg(level)
     for(var i=0; i<GameCardNumMAx; i++)
     {
         num=Math.floor(Math.random()*GameCardNumMAx)+1;
-        if(cardNum1.indexOf(num)==-1)
-            cardNum1[i]=num;
+        if(cardNum.indexOf(num)==-1)
+            cardNum[i]=num;
         else
         {
-            while(cardNum1.indexOf(num)!=-1)
+            while(cardNum.indexOf(num)!=-1)
                 num=Math.floor(Math.random()*GameCardNumMAx)+1;
-            cardNum1[i]=num;
+            cardNum[i]=num;
         }
     }
 
     if(level=='easy')
     {
+        var num;
+        for(var i=0; i<hardGameCardNum*2; i++)
+            cardNumRandom[i]="";
+
+        for(var i=0; i<easyGameCardNum*2; i++)
+        {
+            num=Math.floor(Math.random()*(easyGameCardNum*2));
+            if(cardNumRandom.indexOf(num)==-1)
+                cardNumRandom[i]=num;
+            else
+            {
+                while(cardNumRandom.indexOf(num)!=-1)
+                    num=Math.floor(Math.random()*(easyGameCardNum*2));
+                cardNumRandom[i]=num;
+            }
+        }
+    
         var td=$(".easy");
 
-        for(var i=0; i<easyGameCardNum; i++)
-            td.eq(i).text(cardNum1[i]);
+        for(var i=0, j=0; i<easyGameCardNum*2; i=i+2, j++)
+            td.eq(cardNumRandom[i]).text(cardNum[j]);
+        for(var i=1, j=0; i<easyGameCardNum*2; i=i+2, j++)
+            td.eq(cardNumRandom[i]).text(cardNum[j]);
     }
 
     else if(level=='nomal')
     {
+        var num;
+        for(var i=0; i<hardGameCardNum*2; i++)
+            cardNumRandom[i]="";
+
+        for(var i=0; i<nomalGameCardNum*2; i++)
+        {
+            num=Math.floor(Math.random()*(nomalGameCardNum*2));
+            if(cardNumRandom.indexOf(num)==-1)
+                cardNumRandom[i]=num;
+            else
+            {
+                while(cardNumRandom.indexOf(num)!=-1)
+                    num=Math.floor(Math.random()*(nomalGameCardNum*2));
+                cardNumRandom[i]=num;
+            }
+        }
+    
         var td=$(".nomal");
 
-        for(var i=0; i<nomalGameCardNum; i++)
-            td.eq(i).text(cardNum1[i]);
+        for(var i=0, j=0; i<nomalGameCardNum*2; i=i+2, j++)
+            td.eq(cardNumRandom[i]).text(cardNum[j]);
+        for(var i=1, j=0; i<nomalGameCardNum*2; i=i+2, j++)
+            td.eq(cardNumRandom[i]).text(cardNum[j]);
     }
 
     else if(level=='hard')
     {
+        var num;
+        for(var i=0; i<hardGameCardNum*2; i++)
+            cardNumRandom[i]="";
+
+        for(var i=0; i<hardGameCardNum*2; i++)
+        {
+            num=Math.floor(Math.random()*(hardGameCardNum*2));
+            if(cardNumRandom.indexOf(num)==-1)
+                cardNumRandom[i]=num;
+            else
+            {
+                while(cardNumRandom.indexOf(num)!=-1)
+                    num=Math.floor(Math.random()*(hardGameCardNum*2));
+                cardNumRandom[i]=num;
+            }
+        }
+    
         var td=$(".hard");
 
-        for(var i=0; i<hardGameCardNum; i++)
-            td.eq(i).text(cardNum1[i]);
+        for(var i=0, j=0; i<hardGameCardNum*2; i=i+2, j++)
+            td.eq(cardNumRandom[i]).text(cardNum[j]);
+        for(var i=1, j=0; i<hardGameCardNum*2; i=i+2, j++)
+            td.eq(cardNumRandom[i]).text(cardNum[j]);    
     }
 }
 
