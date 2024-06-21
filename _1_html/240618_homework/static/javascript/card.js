@@ -17,6 +17,10 @@ let hardGameCardNum=18;
 
 let GameCardNumMAx=25;
 
+let cardImg=[];
+const easyImg=["LTd5pnrMc_1.jpg","LTd5pnrMc_2.jpg","LTd5pnrMc_3.jpg","LTd5pnrMc_4.jpg","LTd5pnrMc_5.jpg","LTd5pnrMc_6.jpg","LTd5pnrMc_7.jpg","LTd5pnrMc_8.jpg","LTd5pnrMc_9.jpg","LTd5pnrMc_10.jpg","LTd5pnrMc_11.jpg","LTd5pnrMc_12.jpg"]
+const nomalImg=["coca_1.jpg","coca_2.jpg","coca_3.jpg","coca_4.jpg","coca_5.jpg","coca_6.jpg","coca_7.jpg","coca_8.jpg","coca_9.jpg","coca_10.jpg","coca_11.jpg","coca_12.jpg","coca_13.jpg","coca_14.jpg","coca_15.jpg","coca_16.jpg","coca_17.jpg","coca_18.jpg","coca_19.jpg","coca_20.jpg"];
+
 $(function(){
 
     $("#selEasy").click(function(){game('easy');});
@@ -25,6 +29,7 @@ $(function(){
 
     $("#goHome").click(gameHome);
     $("#start").click(timer);
+    $(".easy").eq(i).attr('src', './static/image/mouse/LTd5pnrMc_1.jpg');
 
 });
 
@@ -45,7 +50,7 @@ function game(level)
         $(".nomalTable").hide();
         $(".hardTable").hide();
         $("#level").text("EASY Lv.1");
-        getImg("easy");
+        getRandomNum("easy");
     }
     else if(level=='nomal')
     {
@@ -53,7 +58,7 @@ function game(level)
         $(".nomalTable").show();
         $(".hardTable").hide();
         $("#level").text("NOMAL Lv.1");
-        getImg("nomal");
+        getRandomNum("nomal");
     }
     else if(level=='hard')
     {
@@ -61,12 +66,12 @@ function game(level)
         $(".nomalTable").hide();
         $(".hardTable").show();
         $("#level").text("HARD Lv.1");
-        getImg("hard");
+        getRandomNum("hard");
     }
     $("#timer").text("02:00");
 }
 
-function getImg(level)
+function getRandomNum(level)
 {
     var num;
     for(var i=0; i<GameCardNumMAx; i++)
@@ -120,89 +125,13 @@ function getImg(level)
     for(var i=1, j=0; i<levelNum; i=i+2, j++)
         td.eq(cardNumRandom[i]).text(cardNum[j]);
 
-
-
-
-    // if(level=='easy')
-    // {
-    //     var num;
-    //     for(var i=0; i<hardGameCardNum*2; i++)
-    //         cardNumRandom[i]="";
-
-    //     for(var i=0; i<easyGameCardNum*2; i++)
-    //     {
-    //         num=Math.floor(Math.random()*(easyGameCardNum*2));
-    //         if(cardNumRandom.indexOf(num)==-1)
-    //             cardNumRandom[i]=num;
-    //         else
-    //         {
-    //             while(cardNumRandom.indexOf(num)!=-1)
-    //                 num=Math.floor(Math.random()*(easyGameCardNum*2));
-    //             cardNumRandom[i]=num;
-    //         }
-    //     }
-    
-    //     var td=$(".easy");
-
-    //     for(var i=0, j=0; i<easyGameCardNum*2; i=i+2, j++)
-    //         td.eq(cardNumRandom[i]).text(cardNum[j]);
-    //     for(var i=1, j=0; i<easyGameCardNum*2; i=i+2, j++)
-    //         td.eq(cardNumRandom[i]).text(cardNum[j]);
-    // }
-
-    // else if(level=='nomal')
-    // {
-    //     var num;
-    //     for(var i=0; i<hardGameCardNum*2; i++)
-    //         cardNumRandom[i]="";
-
-    //     for(var i=0; i<nomalGameCardNum*2; i++)
-    //     {
-    //         num=Math.floor(Math.random()*(nomalGameCardNum*2));
-    //         if(cardNumRandom.indexOf(num)==-1)
-    //             cardNumRandom[i]=num;
-    //         else
-    //         {
-    //             while(cardNumRandom.indexOf(num)!=-1)
-    //                 num=Math.floor(Math.random()*(nomalGameCardNum*2));
-    //             cardNumRandom[i]=num;
-    //         }
-    //     }
-    
-    //     var td=$(".nomal");
-
-    //     for(var i=0, j=0; i<nomalGameCardNum*2; i=i+2, j++)
-    //         td.eq(cardNumRandom[i]).text(cardNum[j]);
-    //     for(var i=1, j=0; i<nomalGameCardNum*2; i=i+2, j++)
-    //         td.eq(cardNumRandom[i]).text(cardNum[j]);
-    // }
-
-    // else if(level=='hard')
-    // {
-    //     var num;
-    //     for(var i=0; i<hardGameCardNum*2; i++)
-    //         cardNumRandom[i]="";
-
-    //     for(var i=0; i<hardGameCardNum*2; i++)
-    //     {
-    //         num=Math.floor(Math.random()*(hardGameCardNum*2));
-    //         if(cardNumRandom.indexOf(num)==-1)
-    //             cardNumRandom[i]=num;
-    //         else
-    //         {
-    //             while(cardNumRandom.indexOf(num)!=-1)
-    //                 num=Math.floor(Math.random()*(hardGameCardNum*2));
-    //             cardNumRandom[i]=num;
-    //         }
-    //     }
-    
-    //     var td=$(".hard");
-
-    //     for(var i=0, j=0; i<hardGameCardNum*2; i=i+2, j++)
-    //         td.eq(cardNumRandom[i]).text(cardNum[j]);
-    //     for(var i=1, j=0; i<hardGameCardNum*2; i=i+2, j++)
-    //         td.eq(cardNumRandom[i]).text(cardNum[j]);    
-    // }
+    for(var i=0; i<levelNum*2; i++)
+    {
+        if(level=='easy')
+            td.eq(i).attr('src', './static/image/mouse/'+easyImg[i]);
+        else if(level=='nomal')
+            td.eq(i).attr('src', './static/image/mouse/'+nomalImg[i]);
+    }
 }
 
 function timer()
