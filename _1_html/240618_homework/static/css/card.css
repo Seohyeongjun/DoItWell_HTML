@@ -255,11 +255,11 @@ body{margin:0;}
 #start{
     background-color:lightgoldenrodyellow;
     font-size:25px;
-    padding:10px;
+    padding:15px;
     border-radius:5px;
     position:relative;
     display:flex;
-    top:28%;
+    top:45%;
     cursor:pointer;
 
 }
@@ -267,25 +267,25 @@ body{margin:0;}
     background-color: red;
     color:white;
     font-size:25px;
-    padding:10px;
+    padding:15px;
     border-radius:5px;
     position:relative;
     display:flex;
-    top:28%;
+    top:45%;
     cursor:pointer;
  
 }
 #levelText{
     position:relative;
     display:flex;
-    top:33%;
+    top:25%;
     padding:0 5px;
 
 }
 #level{
     position:relative;
     display:flex;
-    top:33%;
+    top:26%;
     font-size:20px;
     color:darkred;
     padding:0 5px;
@@ -299,7 +299,7 @@ body{margin:0;}
     border-radius:5px;
     position:relative;
     display:flex;
-    top:59%;
+    top:53%;
     cursor:pointer;
  
 }
@@ -307,11 +307,12 @@ body{margin:0;}
     background-color: red;
     color:white;
     font-size:15px;
-    padding:5px;
+    padding:15px;
     border-radius:5px;
     position:relative;
     display:flex;
-    top:60%;
+    top:53%;
     cursor:pointer;
+    font-size:25px;
  
 }
