@@ -29,14 +29,18 @@ let preIdx;
 let textContent1;
 let textContent2;
 let cardCount=0;
+let gameSelEasy;
+let gameSelNomal;
+let gameSelHard;
 
 const cardImg=["crop1.jpg","crop2.jpg","crop3.jpg","crop4.jpg","crop5.jpg","crop6.jpg","crop7.jpg","crop8.jpg","crop9.jpg","crop10.jpg","emoji31.jpg","emoji32.jpg","emoji33.jpg","emoji34.jpg","emoji41.jpg","emoji42.jpg","emoji43.jpg","emoji44.jpg","emoji51.jpg","emoji52.jpg","emoji53.jpg","emoji54.jpg","emoji61.jpg","emoji62.jpg","emoji63.jpg","emoji64.jpg","emoji71.jpg","emoji72.jpg","emoji73.jpg","emoji74.jpg","emoji81.jpg","emoji82.jpg","emoji83.jpg","emoji84.jpg","emoji91.jpg","emoji92.jpg","emoji93.jpg","emoji94.jpg","superman1.png","superman2.png","batman1.png","batman2.png","batman3.png","ironman1.png","ironman3.png","dog1.png","dog2.png","dog3.png","cat1.png","cat2.png","cat3.png","cat4.png","car1.png","car2.png","car3.png","car4.png","flag1.png","flag2.png","flag3.png","flag4.png","flag5.png","flag6.png"];
 const easyImg=["LTd5pnrMc_1.jpg","LTd5pnrMc_2.jpg","LTd5pnrMc_3.jpg","LTd5pnrMc_4.jpg","LTd5pnrMc_5.jpg","LTd5pnrMc_6.jpg","LTd5pnrMc_7.jpg","LTd5pnrMc_8.jpg","LTd5pnrMc_9.jpg","LTd5pnrMc_10.jpg","LTd5pnrMc_11.jpg","LTd5pnrMc_12.jpg"]
 const nomalImg=["coca_1.jpg","coca_2.jpg","coca_3.jpg","coca_4.jpg","coca_5.jpg","coca_6.jpg","coca_7.jpg","coca_8.jpg","coca_9.jpg","coca_10.jpg","coca_11.jpg","coca_12.jpg","coca_13.jpg","coca_14.jpg","coca_15.jpg","coca_16.jpg","coca_17.jpg","coca_18.jpg","coca_19.jpg","coca_20.jpg"];
 const hardImg=["batman-001.jpg","batman-002.jpg","batman-003.jpg","batman-004.jpg","batman-005.jpg","batman-006.jpg","batman-007.jpg","batman-008.jpg","batman-009.jpg","batman-010.jpg","batman-011.jpg","batman-012.jpg","batman-013.jpg","batman-014.jpg","batman-015.jpg","batman-016.jpg","batman-017.jpg","batman-018.jpg","batman-019.jpg","batman-020.jpg","batman-021.jpg","batman-022.jpg","batman-023.jpg","batman-024.jpg","batman-025.jpg","batman-026.jpg","batman-027.jpg","batman-028.jpg","batman-029.jpg","batman-030.jpg","batman-031.jpg","batman-032.jpg","batman-033.jpg","batman-034.jpg","batman-035.jpg","batman-036.jpg"];
+
 $(function(){
 
- let levelSel;
+    let levelSel;
 
     $("#selEasy").click(function(){game('easy'); levelSel='easy'});
     $("#selNomal").click(function(){game('nomal'); levelSel='nomal'});
@@ -45,7 +49,7 @@ $(function(){
     $("#goHome").click(gameHome); 
     if(startStop=="stop")
         $("#start").click(function(){getRandomImg(levelSel);});
-    // $("#end").click(stop);
+
     $("#restart").click(function(){reset(levelSel);});
     $("#next").click(function(){next(levelSel);});
 
@@ -91,16 +95,19 @@ function getNumEasy()
             idx=0;
             cardCount++;
             if(cardCount==easyGameCardNum)
+            {    
                 cardCount=0;
+                clearInterval(time1);
+                clearInterval(time2);
+            }
         }
         else 
             $(".easyImg").eq(idx).attr('src', './static/image/mouse/'+easyImg[idx]);
 
     }, 500);
     
-    
-    // $("#level").text(`${cardCount}, ${preIdx}, ${selImgOk}, t1: ${textContent1}, t2: ${textContent2}`);
 }
+
 function getNumNomal()
 {
     var idx=$(".nomalImg").index($(this));   
@@ -143,21 +150,9 @@ function getNumNomal()
             $(".nomalImg").eq(idx).attr('src', './static/image/coca/'+nomalImg[idx]);
 
     }, 500);
-    // var idx=$(".nomalImg").index($(this));   
-    // var number=document.getElementsByClassName("nomalImg");
-    // var textContent=number[idx].textContent;
 
-    // $(this).css('border','2px solid red');
-
-    // $(".nomalImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent]);
-
-    // setTimeout(function()
-    // {    
-    //     $(".nomalImg").eq(idx).css('border','');
-    //     $(".nomalImg").eq(idx).attr('src', './static/image/coca/'+nomalImg[idx]);
-
-    // }, 500);
 }
+
 function getNumhard()
 {
     var idx=$(".hardImg").index($(this));   
@@ -200,20 +195,7 @@ function getNumhard()
             $(".hardImg").eq(idx).attr('src', './static/image/batman/'+hardImg[idx]);
 
     }, 500);
-    // var idx=$(".hardImg").index($(this));   
-    // var number=document.getElementsByClassName("hardImg");
-    // var textContent=number[idx].textContent;
 
-    // $(this).css('border','2px solid red');
-
-    // $(".hardImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent]);
-
-    // setTimeout(function()
-    // {    
-    //     $(".hardImg").eq(idx).css('border','');
-    //     $(".hardImg").eq(idx).attr('src', './static/image/batman/'+hardImg[idx]);
-
-    // }, 500);
 }
 
 function reset(level)
@@ -240,6 +222,7 @@ function reset(level)
 function gameHome()
 {
 
+    levelCount=1;
     clearInterval(time1);
     clearInterval(time2);
     startStop="stop"
@@ -249,6 +232,7 @@ function gameHome()
 
     cardNum=[];
 }
+
 function game(level)
 {
     $("#page0").hide();
@@ -262,8 +246,7 @@ function game(level)
     timerMin=MinCounter;
     timerSec=0;
     readyTime=3;
-    levelCount=1;
-
+    // levelCount=1;
 
     if(level=='easy')
     {   
@@ -371,16 +354,6 @@ function getRandomNum(level)
         tdImg.eq(cardNumRandom[i]).text(cardNum[j]);
     for(var i=1, j=0; i<levelNum; i=i+2, j++)
         tdImg.eq(cardNumRandom[i]).text(cardNum[j]);
-
-    // for(var i=0; i<levelNum*2; i++)
-    // {
-    //     if(level=='easy')
-    //         tdImg.eq(i).attr('src', './static/image/mouse/'+easyImg[i]);
-    //     else if(level=='nomal')
-    //         tdImg.eq(i).attr('src', './static/image/coca/'+nomalImg[i]);
-    //     else if(level=='hard')
-    //         tdImg.eq(i).attr('src', './static/image/batman/'+hardImg[i]);
-    // }
 }
 
 function getRandomImg(level)
@@ -393,7 +366,7 @@ function getRandomImg(level)
         tdImg.eq(cardNumRandom[i]).attr('src', './static/image/random/'+cardImg[cardNum[j]]);
 
     startStop="ready";
-    // $("#end").show();
+
     $("#start").hide();    
 
     readyTimer(level);
@@ -496,29 +469,32 @@ function again()
 function next(nextLevel)
 {
     levelCount++;
-
+    cardNum=[];
     reset(nextLevel);
 
-    if(levelCount==4)
+    if(levelCount<4)
+    game(nextLevel);
+
+    else if(levelCount==4)
     {
         levelCount=1;
     
         if(nextLevel=='easy')
         {    
-            game('nomal');
+            // cardNum=[];
+            nextLevel='nomal';
+            game(nextLevel);
 
         }
         else if(nextLevel=='nomal')
         {    
+            // cardNum=[];
+            nextLevel='hard';
             game("hard");
 
         }
         else;
     }
-    $("#level").text(nextLevel);
+    $("#level").text(levelCount);
 
-    // game(nextLevel);
-    // getRandomNum(nextLevel);
-    // getRandomImg(nextLevel);
-    // mainImg(nextLevel);
 }
