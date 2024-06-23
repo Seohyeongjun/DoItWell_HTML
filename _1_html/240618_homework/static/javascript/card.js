@@ -32,7 +32,7 @@ let cardCount=0;
 let gameSelEasy;
 let gameSelNomal;
 let gameSelHard;
-
+let levelSel;
 const cardImg=["crop1.jpg","crop2.jpg","crop3.jpg","crop4.jpg","crop5.jpg","crop6.jpg","crop7.jpg","crop8.jpg","crop9.jpg","crop10.jpg","emoji31.jpg","emoji32.jpg","emoji33.jpg","emoji34.jpg","emoji41.jpg","emoji42.jpg","emoji43.jpg","emoji44.jpg","emoji51.jpg","emoji52.jpg","emoji53.jpg","emoji54.jpg","emoji61.jpg","emoji62.jpg","emoji63.jpg","emoji64.jpg","emoji71.jpg","emoji72.jpg","emoji73.jpg","emoji74.jpg","emoji81.jpg","emoji82.jpg","emoji83.jpg","emoji84.jpg","emoji91.jpg","emoji92.jpg","emoji93.jpg","emoji94.jpg","superman1.png","superman2.png","batman1.png","batman2.png","batman3.png","ironman1.png","ironman3.png","dog1.png","dog2.png","dog3.png","cat1.png","cat2.png","cat3.png","cat4.png","car1.png","car2.png","car3.png","car4.png","flag1.png","flag2.png","flag3.png","flag4.png","flag5.png","flag6.png"];
 const easyImg=["LTd5pnrMc_1.jpg","LTd5pnrMc_2.jpg","LTd5pnrMc_3.jpg","LTd5pnrMc_4.jpg","LTd5pnrMc_5.jpg","LTd5pnrMc_6.jpg","LTd5pnrMc_7.jpg","LTd5pnrMc_8.jpg","LTd5pnrMc_9.jpg","LTd5pnrMc_10.jpg","LTd5pnrMc_11.jpg","LTd5pnrMc_12.jpg"]
 const nomalImg=["coca_1.jpg","coca_2.jpg","coca_3.jpg","coca_4.jpg","coca_5.jpg","coca_6.jpg","coca_7.jpg","coca_8.jpg","coca_9.jpg","coca_10.jpg","coca_11.jpg","coca_12.jpg","coca_13.jpg","coca_14.jpg","coca_15.jpg","coca_16.jpg","coca_17.jpg","coca_18.jpg","coca_19.jpg","coca_20.jpg"];
@@ -40,11 +40,11 @@ const hardImg=["batman-001.jpg","batman-002.jpg","batman-003.jpg","batman-004.jp
 
 $(function(){
 
-    let levelSel;
+   
 
-    $("#selEasy").click(function(){game('easy'); levelSel='easy'});
-    $("#selNomal").click(function(){game('nomal'); levelSel='nomal'});
-    $("#selHard").click(function(){game('hard'); levelSel='hard'});
+    $("#selEasy").click(function(){levelSel='easy', game(levelSel); });
+    $("#selNomal").click(function(){levelSel='nomal', game(levelSel); });
+    $("#selHard").click(function(){levelSel='hard', game(levelSel); });
 
     $("#goHome").click(gameHome); 
     if(startStop=="stop")
@@ -481,19 +481,22 @@ function next(nextLevel)
     
         if(nextLevel=='easy')
         {    
-            // cardNum=[];
-            nextLevel='nomal';
-            game(nextLevel);
+            levelSel='nomal';
+            game(levelSel);
 
         }
         else if(nextLevel=='nomal')
         {    
-            // cardNum=[];
-            nextLevel='hard';
-            game("hard");
+            levelSel='hard';
+            game(levelSel);
 
         }
-        else;
+        else
+        {   
+            levelSel='hard';
+            game(levelSel);
+        }
+
     }
     $("#level").text(levelCount);
 
