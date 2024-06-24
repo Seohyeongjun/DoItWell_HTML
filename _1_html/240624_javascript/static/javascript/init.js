@@ -13,7 +13,7 @@ const imgName=["두리안.jpg","람부탄.jpg","망고.jpg","바나나.jpg","바
 
 let imgPlace=[];
 let selectImg=[];
-let 
+let imgCount=[];
 
 $(function()
 {
@@ -57,10 +57,35 @@ imgLocation=function()
     while(temp.length!=imgCount)
     {
         var tempNum=Math.floor(Math.random()*imgName.length);
-        if(temp.indexOf(tempNum))
-        {
-
-        }
-
+        if(temp.indexOf(tempNum)==-1)
+            temp.push(tempNum);
     }
+    console.log(temp);
+
+    imgPlace=temp.concat(temp);
+    console.log(imgPlace);
+    imgPlace=shuffle();
+
+    $(".item").each(function()
+    {
+        $(this).find("img").attr("src","./static/image/"+imgName[imgPlace[i]]);
+        $(this).find("img").removeClass("hide");
+    });
+
+    setTimeout(function(){
+        $(".item>img").addClass("hide");
+
+    }, 1000);
+}
+
+function shuffle()
+{
+    for(var i=imgPlace.length -1; i>0; i--)
+    {
+        var j=Math.floor(Math.random()*(i+1));
+        var t=imgPlace[i];
+        imgPlace[i]=imgPlace[j];
+        imgPlace[j]=t;
+    }
+
 }
