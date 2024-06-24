@@ -1,7 +1,7 @@
 /********************
     카드 맞추기 게임
 *********************/ 
-let MinCounter=2;
+let MinCounter=1;
 let timerSec=0;
 let timerMin=MinCounter;
 let readyTime=3;
@@ -231,7 +231,7 @@ function reset(level)
     clearInterval(time2);
     startStop="stop"
 
-    $("#timer1").text("02:00");
+    $("#timer1").text("01:00");
     $("#timer2").text("3");
 
     $("#end").hide();
@@ -302,7 +302,7 @@ function game(level)
         $("#level").text(levelCount);
         getRandomNum("hard");
     }
-    $("#timer1").text("02:00");
+    $("#timer1").text("01:00");
     $("#timer2").text("3");
 }
 

@@ -9,7 +9,11 @@ let start;      // 게임 시작 함수
 let score=0;    // 점수
 let time=0;     // 시간
 let clickCount=0;   // 클릭 횟수
+const imgName=["두리안.jpg","람부탄.jpg","망고.jpg","바나나.jpg","바나나.jpg","배.png","수박.jpg","용과.jpg","자두.jpg","파파야.jpg"];
 
+let imgPlace=[];
+let selectImg=[];
+let 
 
 $(function()
 {
@@ -41,7 +45,7 @@ stateInit=function()
 {
     $("#gameStart").addClass("hide");
     $("#state").removeClass("hide");
-    
+
     $("#score").text(`점수 : ${score}점`);
     $("#step").text(`${time}초`);
     $("#click").text(`클릭횟수 : ${clickCount}/30`);
@@ -49,5 +53,14 @@ stateInit=function()
 
 imgLocation=function()
 {
+    var temp=[];
+    while(temp.length!=imgCount)
+    {
+        var tempNum=Math.floor(Math.random()*imgName.length);
+        if(temp.indexOf(tempNum))
+        {
 
+        }
+
+    }
 }
