@@ -7,8 +7,12 @@ function timeStart()
         $("#step").text(`${time}초`);
     }, 1000);
 }
+let clickStop=true;
+
 function imgclick()
 {
+    if(!clickStop) return;      // 두 번이상 연속 클릭 방지
+
     var idx=$(".item").index($(this));  // 몇번째 div 클릭했나
     var $clickImg=$(".item").eq(idx).find("img");   // 클릭한 div의 img태그
 
@@ -44,7 +48,8 @@ function imgclick()
         }
         else                // 두 개의 이미지가 다르다
         {
-            // 서로 다르 ㄴ이미지이니깐 1초 뒤에 두개의이미지 감추기
+            clickStop=false;
+            // 서로 다른 이미지이니깐 1초 뒤에 두개의이미지 감추기
             setTimeout(function(){
             $(".item").eq(selectImg[0].div).find("img").removeClass("select");
             $(".item").eq(selectImg[1].div).find("img").removeClass("select");
@@ -52,6 +57,7 @@ function imgclick()
             $(".item").eq(selectImg[1].div).find("img").addClass("hide");
 
             selectImg=[];   //두 개의 이미지 비교 끝났으니 다음을 위해 초기화
+            clickStop=true;
         }, 1000);
 
         }
