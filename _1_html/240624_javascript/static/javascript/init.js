@@ -13,7 +13,7 @@ const imgName=["두리안.jpg","람부탄.jpg","망고.jpg","바나나.jpg","바
 
 let imgPlace=[];
 let selectImg=[];
-let imgCount=[];
+let imgCount;
 
 $(function()
 {
@@ -38,6 +38,8 @@ start=function()
 {
     stateInit();
     imgLocation();
+    $(".item").on("click", imgClick);
+    timeStart();    // 게임 진행 시간 시작
 }
 
 // 게임현황 초기화 함수
