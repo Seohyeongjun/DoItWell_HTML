@@ -61,28 +61,36 @@ $(function(){
 
 function getNumEasy()
 {
+    
     var idx=$(".easyImg").index($(this));   
     var number=document.getElementsByClassName("easyImg");
     $(this).css('border','2px solid red');
 
     if(keyflag==0)
     {
-        keyflag=1;
         textContent1=number[idx].textContent;
-        $(".easyImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent1]);
-        preIdx=idx;
+        if(textContent1!='ok')
+        {
+            keyflag=1;
+
+            $(".easyImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent1]);
+            preIdx=idx;
+        }
     }
     else
     {
-        keyflag=0;
         textContent2=number[idx].textContent;
-        $(".easyImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent2]);
-        if(textContent1==textContent2)
-            selImgOk=true;
-        else 
+        if(textContent2!='ok')
         {
-            textContent1=0;
-            textContent2=0;
+            keyflag=0;
+            $(".easyImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent2]);
+            if((textContent1==textContent2)&&(preIdx!=idx))
+                selImgOk=true;
+            else 
+            {
+                textContent1=0;
+                textContent2=0;
+            }
         }
     }
     
@@ -93,6 +101,10 @@ function getNumEasy()
         {
             $(".easyImg").eq(preIdx).attr('src', './static/image/random/'+cardImg[textContent1]);
             $(".easyImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent2]);
+
+            number[preIdx].textContent='ok';
+            number[idx].textContent='ok';
+
             textContent1=0;
             textContent2=0;
             selImgOk=false;
@@ -106,10 +118,10 @@ function getNumEasy()
                 clearInterval(time2);
             }
         }
-        else 
+        else if((textContent1!='ok')&&(textContent2!='ok'))
             $(".easyImg").eq(idx).attr('src', './static/image/mouse/'+easyImg[idx]);
 
-    }, 500);
+    }, 200);
     
 }
 
@@ -131,7 +143,7 @@ function getNumNomal()
         keyflag=0;
         textContent2=number[idx].textContent;
         $(".nomalImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent2]);
-        if(textContent1==textContent2)
+        if((textContent1==textContent2)&&(preIdx!=idx))
             selImgOk=true;
         else 
         {
@@ -159,7 +171,7 @@ function getNumNomal()
         else 
             $(".nomalImg").eq(idx).attr('src', './static/image/coca/'+nomalImg[idx]);
 
-    }, 500);
+    }, 200);
 
 }
 
@@ -181,7 +193,7 @@ function getNumhard()
         keyflag=0;
         textContent2=number[idx].textContent;
         $(".hardImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent2]);
-        if(textContent1==textContent2)
+        if((textContent1==textContent2)&&(preIdx!=idx))
             selImgOk=true;
         else 
         {
@@ -209,7 +221,7 @@ function getNumhard()
         else 
             $(".hardImg").eq(idx).attr('src', './static/image/batman/'+hardImg[idx]);
 
-    }, 500);
+    }, 200);
 
 }
 
