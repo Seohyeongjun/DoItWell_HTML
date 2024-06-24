@@ -79,6 +79,11 @@ function getNumEasy()
         $(".easyImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent2]);
         if(textContent1==textContent2)
             selImgOk=true;
+        else 
+        {
+            textContent1=0;
+            textContent2=0;
+        }
     }
     
     setTimeout(function()
@@ -128,6 +133,11 @@ function getNumNomal()
         $(".nomalImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent2]);
         if(textContent1==textContent2)
             selImgOk=true;
+        else 
+        {
+            textContent1=0;
+            textContent2=0;
+        }
     }
     
     setTimeout(function()
@@ -173,6 +183,11 @@ function getNumhard()
         $(".hardImg").eq(idx).attr('src', './static/image/random/'+cardImg[textContent2]);
         if(textContent1==textContent2)
             selImgOk=true;
+        else 
+        {
+            textContent1=0;
+            textContent2=0;
+        }
     }
     
     setTimeout(function()
