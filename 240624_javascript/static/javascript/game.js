@@ -25,8 +25,12 @@ function imgClick()
     // imgPlace[1]에 3이 있다면 imgName[3]의 이미지
     if(selectImg.length==1)
     {
+<<<<<<< HEAD:_1_html/240624_javascript/static/javascript/game.js
         if(selectImg[0].div==dix) 
             return;
+=======
+        if(selectImg[0].div==idx) return;
+>>>>>>> 07e55f8b5347cfc9c441fcec18461bfd24b89061:240624_javascript/static/javascript/game.js
     }
 
     selectImg.push({이미지:imgPlace[idx], div:idx}); 
