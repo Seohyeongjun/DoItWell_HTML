@@ -7,7 +7,15 @@
     margin:0;
     box-sizing:border-box;
 }
+#mainWrap
+{
+    text-align: center;
+    display:flex;
+    flex-wrap:wrap;
+    width:850px;
 
+
+}
 #top
 {
     margin: 30px 0 15px 0;
@@ -87,7 +95,17 @@
     text-align: center;
     padding:2px;
 }
+#secBottom
+{
+    margin-top:20px;
+    align-items: center;
+    text-align: center;
+    /* display:flex;
+    align-items: center;
+    flex-wrap: wrap; */
+    /* width: 700px; */
 
+}
 #secImgslide
 {
     width:700px;
@@ -114,8 +132,11 @@
 #secondWrap
 {
     align-items: center;
-    /* justify-items: center;
-    display: flex; */
+    width:850px;
+
+    justify-items: center;
+    display: flex;
+    text-align: center;
 }
 #secTop
 {
@@ -135,16 +156,12 @@
     position: relative;
     left:700px;
     font-size:20px;
+    width:50px;
 
 }
 .상담1
 {
-    display: flex;
-    position: relative;
-    left:700px;
     bottom:25px;
-    font-size:20px;
-    width:50px;
 }
 
 
@@ -153,6 +170,9 @@
     margin-top:10px;
     /* border:1px solid gray; */
     width:700px;
+    /* align-items: center; */
+
+
 }
 .detail2
 {
