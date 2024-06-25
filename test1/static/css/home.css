@@ -36,11 +36,17 @@
     border-right:1px solid gray;
 }
 
+#menuSeach
+{
+    font-size:15px;
+    border:2px solid blue;
+    padding:5px 10px;
+}
 #searching
 {
-    font-size:20px;
-    border:2px solid blue;
-    padding:5px;
+    width:200px;
+    border:0;
+    height:28px;
 }
 
 #mainBottom
@@ -138,6 +144,7 @@
     left:700px;
     bottom:25px;
     font-size:20px;
+    width:50px;
 }
 
 
