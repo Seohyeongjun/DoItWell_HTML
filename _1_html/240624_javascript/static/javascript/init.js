@@ -13,7 +13,7 @@ const imgName=["두리안.jpg","람부탄.jpg","망고.jpg","바나나.jpg","바
 
 let imgPlace=[];
 let selectImg=[];
-let imgCount;
+let imgCount=6;
 
 $(function()
 {
@@ -25,9 +25,10 @@ $(function()
 // 게임판 초기화 함수
 boardInit=function()
 {
-    $(".item").each(function(i, v){// i:인덱스, v:배열
+    $(".item").each(function(i, v)
+    {// i:인덱스, v:배열
         $(this).find("img").addClass("hide");       // 클래스명이 img를 찾아서 hide라는 태그를 추가
-        $(this).append('<div class="itemHide"></div>');
+        $(this).append(`<div class="itemHide"></div>`);
 
     });
 
@@ -68,13 +69,14 @@ imgLocation=function()
     console.log(imgPlace);
     imgPlace=shuffle();
 
-    $(".item").each(function()
+    $(".item").each(function(i)
     {
         $(this).find("img").attr("src","./static/image/"+imgName[imgPlace[i]]);
         $(this).find("img").removeClass("hide");
     });
 
-    setTimeout(function(){
+    setTimeout(function()
+    {
         $(".item>img").addClass("hide");
 
     }, 1000);
@@ -89,5 +91,5 @@ function shuffle()
         imgPlace[i]=imgPlace[j];
         imgPlace[j]=t;
     }
-
+    return imgPlace;
 }

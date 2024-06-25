@@ -9,7 +9,7 @@ function timeStart()
 }
 let clickStop=true;
 
-function imgclick()
+function imgClick()
 {
     if(!clickStop) return;      // 두 번이상 연속 클릭 방지
 
@@ -25,7 +25,8 @@ function imgclick()
     // imgPlace[1]에 3이 있다면 imgName[3]의 이미지
     if(selectImg.length==1)
     {
-        if(secectImg[0].div==dix) return;
+        if(selectImg[0].div==dix) 
+            return;
     }
 
     selectImg.push({이미지:imgPlace[idx], div:idx}); 
@@ -50,15 +51,16 @@ function imgclick()
         {
             clickStop=false;
             // 서로 다른 이미지이니깐 1초 뒤에 두개의이미지 감추기
-            setTimeout(function(){
-            $(".item").eq(selectImg[0].div).find("img").removeClass("select");
-            $(".item").eq(selectImg[1].div).find("img").removeClass("select");
-            $(".item").eq(selectImg[0].div).find("img").addClass("hide");
-            $(".item").eq(selectImg[1].div).find("img").addClass("hide");
+            setTimeout(function()
+            {
+                $(".item").eq(selectImg[0].div).find("img").removeClass("select");
+                $(".item").eq(selectImg[1].div).find("img").removeClass("select");
+                $(".item").eq(selectImg[0].div).find("img").addClass("hide");
+                $(".item").eq(selectImg[1].div).find("img").addClass("hide");
 
-            selectImg=[];   //두 개의 이미지 비교 끝났으니 다음을 위해 초기화
-            clickStop=true;
-        }, 1000);
+                selectImg=[];   //두 개의 이미지 비교 끝났으니 다음을 위해 초기화
+                clickStop=true;
+            }, 1000);
 
         }
         
