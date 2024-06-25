@@ -25,7 +25,7 @@ function imgclick()
     // imgPlace[1]에 3이 있다면 imgName[3]의 이미지
     if(selectImg.length==1)
     {
-        if(secectImg[0].div==dix) return;
+        if(selectImg[0].div==idx) return;
     }
 
     selectImg.push({이미지:imgPlace[idx], div:idx}); 

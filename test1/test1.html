@@ -1,0 +1,205 @@
+<!--
+    부동산 시세 조회 및 상담 할 수 있는 사이트 만들기
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script src="./static/javascript/page1.js"></script>
+<script src="./static/javascript/mainPage.js"></script>
+<link rel="stylesheet" href="./static/css/home.css">
+
+</head>
+<body>
+    <div id="mainWrap">
+        <div id="mainTop">
+            <div id="top">
+                <div id="topLetter"><h2>세상의 모든 부동산 - 세모부</h2></div>
+            </div>
+            <div it="topMenu">
+                <div id="selMenu" >
+                    <span id="menuTop" class="topBar">
+                        <span id="menu">거래방식</span>
+                        <img class="menusel">
+                    </span>
+                    <span id="priceTop"class="topBar">
+                        <span id="sel">가격대</span>
+                        <img class="menusel">
+                    </span>
+                    <span id="areaTop" class="topBar">
+                        <span id="area">면적</span>
+                        <img class="menusel">
+                    </span>
+                    <span id="roomTop" class="topBar">
+                        <span id="room">방/욕실수</span>
+                        <img class="menusel">
+                    </span>
+                    <span id="menuSeach" >
+                        <span id="searching">
+                        <input type="searchTop"><b> 검색</b>
+                    </span>
+                    <span id="상담" class="상담1">상담</span>
+            </div>
+        </div>
+        <div id="mainBottom">
+            <span id="selImg1" class="mainImg">
+                <img src="./static/image/a1.jpg" class="selImgTop">
+                <span class="selImgBobbom">
+                    <span class="menuBottom">아파트</span>
+                    <span class="priceBottom">전세 1억2,000</span>
+                </span>
+            </span>
+            <span id="selImg2" class="mainImg">
+                <img src="./static/image/a2.jpg" span class="selImgTop">
+                <span class="selImgBobbom">
+                    <span class="menuBottom">주택</span>
+                    <span class="priceBottom">전세 2억2,000</span>
+                </span>
+            </span>
+            <span id="selImg3" class="mainImg">
+                <img src="./static/image/a3.jpg" span class="selImgTop">
+                <span class="selImgBobbom">
+                    <span class="menuBottom">오피스텔</span>
+                    <span class="priceBottom">월세 1,000/50</span>
+                </span>
+            </span>
+            <span id="selImg4" class="mainImg">
+                <img src="./static/image/a8.jpg" pan class="selImgTop">
+                <span class="selImgBobbom">
+                    <span class="menuBottom">아파트</span>
+                    <span class="priceBottom">매매 30억2,000</span>
+                </span>
+            </span>
+            <span id="selImg5" class="mainImg">
+                <img src="./static/image/a4.jpg" span class="selImgTop">
+                <span class="selImgBobbom">
+                    <span class="menuBottom">아파트</span>
+                    <span class="priceBottom">전세 1억2,500</span>
+                </span>
+            </span>
+            <span id="selImg6" class="mainImg">
+                <img src="./static/image/a5.webp" span class="selImgTop">
+                <span class="selImgBobbom">
+                    <span class="menuBottom">아파트</span>
+                    <span class="priceBottom">전세 2억6,000</span>
+                </span>
+            </span>
+            <span id="selImg7" class="mainImg">
+                <img src="./static/image/a6.avif" span class="selImgTop">
+                <span class="selImgBobbom">
+                    <span class="menuBottom">아파트</span>
+                    <span class="priceBottom">전세 2억 2,000</span>
+                </span>
+            </span>
+            <span id="selImg8" class="mainImg">
+                <img src="./static/image/a4.jpg" span class="selImgTop">
+                <span class="selImgBobbom">
+                    <span class="menuBottom">오피스텔</span>
+                    <span class="priceBottom">월세 2,000/45</span>
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <div id="secondWrap"> <!-- style="display:none" -->
+        <div id="secWrapTop">
+            <div id="secTop">
+                <div id="secTopLetter"><h2>세상의 모든 부동산 - 세모부</h2></div>
+            </div>
+                <span id="상담" class="상담1">상담</span>
+            </div>
+        </div>
+        <div id="secBottom">
+            <span id="secImgslide" class="secImg">
+                <img src="./static/image/a1.jpg">
+            </span>
+            <div id="detailtop">
+                <div id="detailHead">한정큐리어스 1동저층</div>
+                <div id="detailmiddle">매매2억 3,000(724만원/3.3㎡)</div>
+                <div id="detailbottom">
+                    <span class="detail">남동향</span>
+                    <span class="detail">역까지 11분공급</span>
+                    <span class="detail">전용 면적:105㎡/84.94㎡</span>
+                </div>
+            </div>
+            <div id="detailMain">
+                <span id="매물">매물정보</span>
+                <span id="시세">시세/실거래가</span>
+                <span id="동호수">동호수/공시가격</span>
+                <span id="학군">학군정보</span>
+            </div>
+            <div id="detail1">    
+                <div id="매물특징" class="detail2">
+                    <div class="detail3">매물특징</div>
+                    <span class="detail4">깨끗.빠른입주.버스5분이내.중구청.성모병원 충대병원.테미공원.직장인좋은집</span>
+                </div>    
+                <div id="공급" class="detail2">
+                    <span class="detail3">공급/전용면적</span>
+                    <span class="detail4">105㎡/84.94㎡(전용률81%)</span>
+                </div>    
+                <div id="방구조" class="detail2">
+                    <div class="detail3">해당층/총층</div>
+                    <span class="detail4">저/10층</span>
+                    <div class="detail3">방수/욕실수</div>
+                    <span class="detail4">3/2개</span>
+                </div>    
+                <div id="관리비" class="detail2">
+                    <div class="detail3">관리비</div>
+                    <span class="detail4">15만원 상세보기</span>
+                </div>    
+                <div id="월세" class="detail2">
+                    <div class="detail3">보증금/월세</div>
+                    <span class="detail4">-/-</span>
+                </div>    
+                <div id="방향" class="detail2">
+                   <div class="detail3">방향</div>
+                    <span class="detail4">남동향(거실 기준)</span>
+                </div>    
+                <div id="구조" class="detail2">
+                    <div class="detail3">현관구조</div>
+                    <span class="detail4">계단식</span>
+                    <div class="detail3">난방(방식/연료)</div>
+                    <span class="detail4">개별난방/도시가스</span>
+                </div>    
+                <div id="입주일" class="detail2">
+                   <div class="detail3">입주가능일</div>
+                    <span class="detail4">즉시입주 협의가능</span>
+                </div>    
+                <div id="주차" class="detail2">
+                    <div class="detail3">총주차대수</div>
+                    <span class="detail4">24대(세대당 1.26대)</span>
+                </div>    
+                <div id="면적" class="detail2">
+                    <div class="detail3">해당면적 세대수</div>
+                    <span class="detail4">6세대</span>
+                    <div class="detail3">건축물 용도</div>
+                    <span class="detail4">공동주택</span>
+                </div>    
+                <div id="매물번호" class="detail2">
+                    <div class="detail3">매물번호</div>
+                    <span class="detail4">2429368244</span>
+                </div>    
+                <div id="중개사" class="detail2">
+                   <div class="detail3">중개사</div>
+                    <span class="detail4">
+                        부동산숲공인중개사사무소<br>
+                        대표이남연등록번호<br>
+                        소재지대전 중구 문화동1-43 문화마을아파트1단지 상가 102호<br>
+                        전화042-221-3600,010-3435-3825<br>
+                        최근 3개월 집주인확인 106건
+                    </span>
+                </div>
+            </div>
+        </div>       
+    </div>
+    
+
+
+</body>
+</html>

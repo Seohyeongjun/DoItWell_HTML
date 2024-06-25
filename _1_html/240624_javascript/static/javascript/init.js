@@ -13,7 +13,7 @@ const imgName=["두리안.jpg","람부탄.jpg","망고.jpg","바나나.jpg","바
 
 let imgPlace=[];
 let selectImg=[];
-let imgCount;
+let imgCount=6;
 
 $(function()
 {
@@ -68,7 +68,7 @@ imgLocation=function()
     console.log(imgPlace);
     imgPlace=shuffle();
 
-    $(".item").each(function()
+    $(".item").each(function(i)
     {
         $(this).find("img").attr("src","./static/image/"+imgName[imgPlace[i]]);
         $(this).find("img").removeClass("hide");
@@ -89,5 +89,5 @@ function shuffle()
         imgPlace[i]=imgPlace[j];
         imgPlace[j]=t;
     }
-
+    return imgPlace;
 }
